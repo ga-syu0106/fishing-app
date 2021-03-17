@@ -1,29 +1,113 @@
-<h2>Sign up</h2>
+<%= render 'shared/second_header'%>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= form_with model:@user, url: user_registration_path, class:'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>新規会員登録</h1>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <h2 class='form-group-wrap'>アカウント</h2>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">メールアドレス
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">パスワード
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"６文字以上の半角英数字", autofocus: true %>
+    <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+   <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">パスワード(確認)
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.password_field :password_confirmation, class:"input-default", id:"password_confirmation", placeholder:"上記と同じパスワードを入力してください", autofocus: true %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <h2 class='form-group-wrap'>プロフィール</h2>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ニックネーム
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) 釣り太郎", maxlength:"40" %>
   </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">所在地
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.collection_select(:municipality_id , Municipality.all, :id, :name, {prompt: "未設定"}, {class:"input-default", id:"municipality-sales-status"}) %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">主な釣り場所
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.collection_select(:style_id, Style.all, :id, :name, {prompt: "未設定"}, {class:"input-default", id:"style-sales-status"}) %>
+  </div>
+    <div class='form-age-history'>
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">年齢
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <div class='form-default'>
+    <%= f.text_area :age, class:"input-default font-right", id:"age", placeholder:"例) 20", maxlength:"2" %>
+    <span class='input-text'>才</span>
+    </div>
+  </div>
+
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">釣り歴
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <div class='form-default'>
+    <%= f.text_area :history, class:"input-default font-right", id:"history", placeholder:"例) 3", maxlength:"2" %>
+        <span class='input-text'>年</span>
+    </div>
+  </div>
+    </div>
+
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">自己紹介
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <div class='form-default'>
+    <%= f.text_area :profile, class:"input-big", id:"profile",
+    placeholder:'例) １年中いつでも釣りをしています。夏場はよく子供と釣りに行ってます。釣った魚は捌いて刺身にしたり、天ぷらにしたりして美味しくいただいてます！みんなで釣りMAPを増やしていきましょう！！', maxlength:"1000" %>
+    </div>
+  </div>
+
+  <div class='register-btn'>
+    <%= f.submit "会員登録" ,class:"register-red-btn" %>
+  </div>
+
+  </div>
+</div>
 <% end %>
-
-<%= render "devise/shared/links" %>
