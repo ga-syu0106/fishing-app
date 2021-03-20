@@ -51,6 +51,15 @@
 
   <div class="form-group">
     <div class='form-text-wrap'>
+      <label class="form-text">プロフィール画像
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.file_field :user_image, class:"input-default", id:"user-image" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
       <label class="form-text">性別
         <span class="indispensable">必須</span>
       </label>
