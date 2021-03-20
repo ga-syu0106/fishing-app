@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_060400) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
+    t.string "gender", null: false
     t.integer "municipality_id"
     t.integer "age"
     t.integer "history"
