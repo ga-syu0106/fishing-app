@@ -1,3 +1,61 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-main{
+  width:100%;
+  background-image: url("fishes2.png");
+  background-size: cover;
+  margin:auto
+}
+.user-inner{
+  width:80%;
+  margin:auto;
+  background-color: rgba(255,255,255,0.8);
+  border: 1px solid black;
+}
+.user-wrapper{
+  padding:30px 0;
+  width:80%;
+  margin:auto;
+}
+.page-heading{
+  text-align:center;
+  height:30px;
+  line-height:30px;
+}
+
+.user-flex{
+  display:flex;
+  width:100%;
+  padding-top:30px;
+}
+.user-left{
+  width:50%;
+  text-align:center;
+}
+.user-right{
+  width:40%;
+}
+.left-image{
+  width:60%;
+  border: 5px solid lightgray;
+  border-radius:50px;
+}
+.table-col1{
+  width:40%;
+}
+.page-wrapper{
+  margin:auto;
+  width:75%;
+  margin-bottom:50px;
+}
+.page-profile{
+  width:100%;
+  height: 200px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
