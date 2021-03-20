@@ -19,4 +19,7 @@ class Municipality < ActiveHash::Base
     {id: 49, name: '扶桑町'},{id: 50, name: '碧南市'},{id: 51, name: '南知多町'},
     {id: 52, name: '美浜町'},{id: 53, name: 'みよし市'},{id: 54, name: '弥富市'},
   ]
+
+  include ActiveHash::Associations
+  has_many :users
 end
