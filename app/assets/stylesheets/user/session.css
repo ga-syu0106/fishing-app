@@ -1,0 +1,10 @@
+.form-session{
+  margin-top:30px;
+}
+
+.login-flash-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+  text-align:center;
+}

@@ -7,6 +7,7 @@
 | email              | string  | null: false |
 | encrypted_password | string  | null: false |
 | nickname           | string  | null: false |
+| gender             | string  | null: false |
 | municipality_id    | integer | null: false |
 | age                | integer | null: false |
 | history            | integer | null: false |
