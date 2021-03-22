@@ -25,7 +25,7 @@
 | fishing_day      | date       | null: false                    |
 | fishing_time     | time       | null: false                    |
 | municipality_id  | integer    | null: false                    |
-| spot             | name       |                                |
+| spot             | string     |                                |
 | whether_id       | integer    | null: false                    |
 | fish_kind_id     | integer    | null: false                    |
 | fish_name        | string     |                                |
