@@ -25,6 +25,13 @@
       </label>
     </div>
     <%= f.file_field :user_image, class:"input-default", id:"user-image" %>
+    <div class="prev-box">
+    <% if @user.user_image.attached? %>
+    <%= image_tag @user.user_image, class:"prev-image", id:"prev-image" %>
+    <% else %>
+       <%= image_tag "noimage.png", class:"prev-image", id:"prev-image" %>
+       <% end %>
+       </div>
   </div>
 
   <div class="form-group">
