@@ -1,0 +1,119 @@
+<%= render 'shared/second_header'%>
+
+<%= form_with model:@user, url: user_path, class:'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>ユーザー情報編集</h1>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <h2 class='form-group-wrap'>プロフィール</h2>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ニックネーム
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) 釣り太郎", maxlength:"40" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">プロフィール画像
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.file_field :user_image, class:"input-default", id:"user-image" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">性別
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <div class="gender">
+    <div class="gender-button">
+    <%= f.radio_button :gender, :男性, class:"radio-gender", id:"male" %>
+    <label class="input-gender">男性</label>
+    </div>
+    <div class="gender-button">
+    <%= f.radio_button :gender, :女性, class:"radio-gender", id:"female" %>
+    <label class="input-gender">女性</label>
+    </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">所在地
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.collection_select(:municipality_id , Municipality.all, :id, :name, {prompt: "未設定"}, {class:"input-default", id:"municipality-sales-status"}) %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">主な釣り場所
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.collection_select(:style_id, Style.all, :id, :name, {prompt: "未設定"}, {class:"input-default", id:"style-sales-status"}) %>
+  </div>
+    <div class='form-age-history'>
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">年齢
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <div class='form-default'>
+    <%= f.text_area :age, class:"input-default font-right", id:"age", placeholder:"例) 20", maxlength:"2" %>
+    <span class='input-text'>才</span>
+    </div>
+  </div>
+
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">釣り歴
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <div class='form-default'>
+    <%= f.text_area :history, class:"input-default font-right", id:"history", placeholder:"例) 3", maxlength:"2" %>
+        <span class='input-text'>年</span>
+    </div>
+  </div>
+    </div>
+
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">自己紹介
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <div class='form-default'>
+    <%= f.text_area :profile, :size => "20x10", class:"input-big", id:"profile",
+    placeholder:'例) １年中いつでも釣りをしています。夏場はよく子供と釣りに行ってます。釣った魚は捌いて刺身にしたり、天ぷらにしたりして美味しくいただいてます！みんなで釣りMAPを増やしていきましょう！！' %>
+    </div>
+  </div>
+
+  <div class="register-btn-flex">
+
+    <div class='register-btn'>
+    <%= link_to "変更せずに戻る", user_path, method: :get, class:"register-gray-btn" %>
+    </div>
+
+    <div class='register-btn'>
+      <%= f.submit "変更する" ,class:"register-red-btn" %>
+    </div>
+
+    </div>
+
+  </div>
+</div>
+<% end %>
+
+<%= render "/shared/footer" %>
