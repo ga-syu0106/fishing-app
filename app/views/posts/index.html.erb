@@ -3,6 +3,7 @@
 <div class="post-index-fish">
 <h2 class="post-index-text">投稿一覧</h2>
 <div class="post-index-fish-indiv">
+<%= will_paginate(@posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
 <div class="row ">
 <% @posts.each do |post| %>
 <div class="col-12 col-md-3">
@@ -45,6 +46,7 @@
 </div>
 <% end %>
 </div>
+<%= will_paginate(@posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
 </div>
 </div>
 </div>
