@@ -22,15 +22,14 @@
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| fishing_day      | date       | null: false                    |
+| fishing_date     | date       | null: false                    |
 | fishing_time     | time       | null: false                    |
 | municipality_id  | integer    | null: false                    |
 | spot             | string     |                                |
-| whether_id       | integer    | null: false                    |
+| weather_id       | integer    | null: false                    |
 | fish_kind_id     | integer    | null: false                    |
 | fish_name        | string     |                                |
-| animal           | integer    | null: false                    |
-| gimmick          | integer    |                                |
+| gimmick          | string     |                                |
 | rod              | string     |                                |
 | reel             | string     |                                |
 | line             | string     |                                |
