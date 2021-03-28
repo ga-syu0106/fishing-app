@@ -1,0 +1,142 @@
+<%= render "shared/third_header" %>
+
+<%= form_with model:@post, url: posts_path, class:'registration-main', local: true do |f| %>
+<div class='fish-new-wrap'>
+  <div class='fish-new-header'>
+    <h1 class='fish-new-header-text'>釣果投稿</h1>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">画像
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.file_field :fish_image, class:"fish-input", id:"user-image" %>
+       <%= image_tag "noimage.png", class:"fish-prev-image", id:"prev-image" %>
+  </div>
+
+      <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">魚種
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.collection_select(:fish_kind_id, FishKind.all, :id, :name, {prompt:"選択してください"}, {class:"fish-input", id:"municipality-sales-status"}) %>
+  </div>
+
+        <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">魚名
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.text_area :fish_name, placeholder:"(例)イソカサゴ　※魚種でカサゴを選択", class:"fish-input", id:"municipality-sales-status" %>
+  </div>
+
+      <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">詳細説明
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <div class='form-default'>
+    <%= f.text_area :explanation, class:"fish-input-big", id:"profile",
+    placeholder:'例)穴釣りで、カサゴが8尾釣れました。 一番大きいサイズで21センチほどでした。帰って煮付けにして食べようと思います！！', maxlength:"1000" %>
+    </div>
+  </div>
+
+<div class="fish-date">
+  <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">釣った日
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.date_field :fishing_date,  value: Time.now.strftime("%Y-%m-%d"), class:"fish-triple-input" %>
+  </div>
+
+    <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">釣った時間
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.time_field :fishing_time, value: Time.now, class:"fish-triple-input" %>
+  </div>
+
+      <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">天候
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.collection_select(:weather_id, Weather.all, :id, :name, {prompt:"選択してください"}, {class:"fish-triple-input"}) %>
+  </div>
+  
+  </div>
+
+    <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">釣った地域(市町村)
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.collection_select(:municipality_id, Municipality.all, :id, :name, {prompt:"選んでください"}, {class:"fish-input"}) %>
+  </div>
+
+      <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">釣った場所(名称)
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.text_area :spot, placeholder:"(例)西浦海岸の堤防", class:"fish-input" %>
+  </div>
+
+        <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">仕掛け
+        <span class="indispensable">必須</span>
+      </label>
+    </div>
+    <%= f.text_area :gimmick, placeholder:"(例)ブラクリ　餌は小海老", class:"fish-input" %>
+  </div>
+
+      <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">ロッド名
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.text_area :rod, placeholder:"(例)プロトラスト ガンガンテトラ 110L", class:"fish-input" %>
+  </div>
+
+        <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">リール名
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.text_area :reel, placeholder:"(例)ダイワ スーパーコロネット ST-10RL", class:"fish-input" %>
+  </div>
+
+        <div class="fish-new-group">
+    <div class='fish-new-text-wrap'>
+      <label class="fish-new-text">ライン名
+        <span class="any">任意</span>
+      </label>
+    </div>
+    <%= f.text_area :line, placeholder:"(例)サンライン クインスター 600m 3号", class:"fish-input" %>
+  </div>
+
+  <div class='register-btn'>
+    <%= f.submit "投稿する" ,class:"fish-new-red-btn" %>
+  </div>
+
+  </div>
+</div>
+<% end %>
+
+<%= render "/shared/footer" %>
