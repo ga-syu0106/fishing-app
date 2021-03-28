@@ -16,11 +16,14 @@ border-radius: 5px;
 .form-header{
   margin:auto;
   text-align:center;
-  width:60%
+  width:60%;
 }
 .form-header-text{
   font-size:32px;
   border-bottom:2px double gray;
+}
+.form-group{
+  margin-top:20px;
 }
 .form-group-wrap{
   font-size:20px;
@@ -61,7 +64,6 @@ border-radius: 5px;
 }
 .input-big{
   width: 100%;
-  margin-top: 1px;
   height: 200px;
   padding: 10px 16px 8px;
   border-radius: 4px;
