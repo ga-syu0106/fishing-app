@@ -88,8 +88,7 @@
         <%= "投稿一覧"%>
       </h4>
       <div class="fish-list">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-        <%# render partial: 'posts/posts' , collection: @posts %>
+        <%= render "shared/post", partial: @posts %>
       </div>
     </div>
   </div>
