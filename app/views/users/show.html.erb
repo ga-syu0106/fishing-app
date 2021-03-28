@@ -3,7 +3,7 @@
   <div class="user-inner">
       <div class="user-wrapper">
       <div class ="user-edit">
-      <%= link_to "ユーザー情報編集はこちら", edit_user_path(@user), class:"user-edit-btn" %>
+      <%= link_to "編集", edit_user_path(@user), class:"user-edit-btn" %>
       </div>
       <h2 class="page-heading">
         <%= "#{@user.nickname}さんのマイページ"%>
@@ -11,6 +11,7 @@
 
       <div class="user-flex">
       <div class="user-left">
+      <div class="left-box">
       <% if @user.user_image.attached? %>
         <%= image_tag @user.user_image, class:"left-image" %>
       <% elsif @user.gender == "男性" %>
@@ -18,6 +19,7 @@
       <% elsif @user.gender == "女性" %>
         <%= image_tag "woman.png", class:"left-image" %>
       <% end %>
+      </div>
       </div>
 
       <div class="user-right">

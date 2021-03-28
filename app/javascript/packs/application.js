@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 //require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("../prev-image")
 
 import 'bootstrap'
 import '../src/application.scss'
