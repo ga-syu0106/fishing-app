@@ -34,21 +34,22 @@ ActiveRecord::Schema.define(version: 2021_03_22_051932) do
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "fishing_day", null: false
+    t.date "fishing_date", null: false
     t.time "fishing_time", null: false
     t.integer "municipality_id", null: false
     t.string "spot"
-    t.integer "whether_id", null: false
+    t.integer "weather_id", null: false
     t.integer "fish_kind_id", null: false
     t.string "fish_name"
-    t.integer "animal", null: false
-    t.integer "gimmick", null: false
+    t.string "gimmick", null: false
     t.string "rod"
     t.string "reel"
     t.string "line"
     t.text "explanation"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -71,4 +72,5 @@ ActiveRecord::Schema.define(version: 2021_03_22_051932) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "posts", "users"
 end
