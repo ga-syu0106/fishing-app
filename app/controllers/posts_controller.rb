@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 8).order(fishing_date: "ASC").includes(:user)
+    @posts = Post.paginate(page: params[:page], per_page: 8).order(created_at: "DESC").includes(:user)
   end
   
   def new
@@ -15,6 +15,10 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private

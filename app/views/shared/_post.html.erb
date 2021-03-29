@@ -1,0 +1,49 @@
+<h2 class="post-index-text">投稿一覧</h2>
+<div class="post-index-fish-indiv">
+<%= will_paginate(@posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
+<div class="row ">
+<% @posts.each do |post| %>
+<div class="col-12 col-md-3">
+<div class="index-fish-indiv">
+<%= link_to post_path(post) do%>
+<div class="index-fish-image-box">
+<% if post.fish_image.attached? %>
+  <%= image_tag post.fish_image, class:"index-fish-image" %>
+<% else %>
+  <%= image_tag "fishing_fish.png", class:"index-fish-image" %>
+  <% end %>
+  </div>
+  <% end %>
+  <div class="index-fish-indiv-text">
+  <div class="index-user-profile">
+    <%= link_to user_path(post.user) do%>
+    <div class="index-user-image-box">
+      <% if post.user.user_image.attached? %>
+        <%= image_tag post.user.user_image, class:"index-user-image" %>
+      <% elsif post.user.gender == "男性" %>
+        <%= image_tag "man.png", class:"index-user-image" %>
+      <% elsif post.user.gender == "女性" %>
+        <%= image_tag "woman.png", class:"index-user-image" %>
+      <% end %>
+      </div>
+      <% end %>
+        <div class="index-user-nickname">
+        <%= link_to post.user.nickname, user_path(post.user), class:"post-index-fish-link" %>
+        </div>
+  </div>
+  <div class="index-date">
+  <%= post.fishing_date.strftime("%Y年%m月%d日") %>
+  </div>
+  <div class="index-municipality">
+  <%= link_to post.municipality.name, "#", class:"post-index-fish-link" %>
+  </div>
+    <div class="index-fish-kind">
+  <%= link_to post.fish_kind.name, "#", class:"post-index-fish-link" %>
+  </div>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+<%= will_paginate(@posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
+</div>

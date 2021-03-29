@@ -1,53 +1,7 @@
 <%= render 'shared/header'%>
 <div class="post-index">
 <div class="post-index-fish">
-<h2 class="post-index-text">投稿一覧</h2>
-<div class="post-index-fish-indiv">
-<%= will_paginate(@posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
-<div class="row ">
-<% @posts.each do |post| %>
-<div class="col-12 col-md-3">
-<div class="index-fish-indiv">
-<%= link_to "#" do%>
-<div class="index-fish-image-box">
-<% if post.fish_image.attached? %>
-  <%= image_tag post.fish_image, class:"index-fish-image" %>
-<% else %>
-  <%= image_tag "noimage.png", class:"index-fish-image" %>
-  <% end %>
-  </div>
-  <% end %>
-  <div class="index-fish-indiv-text">
-  <div class="index-user-profile">
-    <div class="index-user-image-box">
-      <% if post.user.user_image.attached? %>
-        <%= link_to image_tag(post.user.user_image, class:"index-user-image"), "#" %>
-      <% elsif post.user.gender == "男性" %>
-        <%= link_to image_tag("man.png", class:"index-user-image"),"#" %>
-      <% elsif post.user.gender == "女性" %>
-        <%= link_to image_tag("woman.png", class:"index-user-image"), "#" %>
-      <% end %>
-      </div>
-        <div class="index-user-nickname">
-        <%= link_to post.user.nickname, "#", class:"post-index-fish-link" %>
-        </div>
-  </div>
-  <div class="index-date">
-  <%= post.fishing_date %>
-  </div>
-  <div class="index-municipality">
-  <%= link_to post.municipality.name, "#", class:"post-index-fish-link" %>
-  </div>
-    <div class="index-fish-kind">
-  <%= link_to post.fish_kind.name, "#", class:"post-index-fish-link" %>
-  </div>
-</div>
-</div>
-</div>
-<% end %>
-</div>
-<%= will_paginate(@posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
-</div>
+<%= render "shared/post", partial: @posts %>
 </div>
 </div>
 <%= render 'shared/footer'%>

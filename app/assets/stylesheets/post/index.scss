@@ -1,7 +1,7 @@
 .post-index{
   background-image: url("../fishes.png");
   background-size: cover;
-  padding-top:50px;
+  padding:50px 0 50px;;
 }
 .post-index-text{
   width:20%;
@@ -15,7 +15,7 @@
   width:80%;
   margin:auto;
   padding-top:30px;
-  background-color:white;
+  background-color:rgb(240,255,255);
   border:1px solid black;
 }
 .post-index-paginate{
@@ -49,7 +49,8 @@
 }
 .index-fish-image{
   width:100%;
-  height:auto;
+  height:100%;
+  object-fit: contain;
   position:absolute;
   top:50%;
   left:50%;

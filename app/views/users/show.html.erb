@@ -5,13 +5,13 @@
       <div class ="user-edit">
       <%= link_to "編集", edit_user_path(@user), class:"user-edit-btn" %>
       </div>
-      <h2 class="page-heading">
+      <h2 class="user-page-heading">
         <%= "#{@user.nickname}さんのマイページ"%>
       </h2>
 
       <div class="user-flex">
       <div class="user-left">
-      <div class="left-box">
+      <div class="user-left-box">
       <% if @user.user_image.attached? %>
         <%= image_tag @user.user_image, class:"left-image" %>
       <% elsif @user.gender == "男性" %>
@@ -83,13 +83,8 @@
         <%= simple_format(@user.profile)%>
         </div>
       </div>
-
-      <h4 class="fish-post">
-        <%= "投稿一覧"%>
-      </h4>
       <div class="fish-list">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-        <%# render partial: 'posts/posts' , collection: @posts %>
+        <%= render "shared/post", partial: @posts %>
       </div>
     </div>
   </div>
