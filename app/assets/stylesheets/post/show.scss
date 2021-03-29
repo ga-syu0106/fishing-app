@@ -1,0 +1,95 @@
+.post-show-main{
+  width:100%;
+  background-image: url("../fishes2.png");
+  background-size: cover;
+  margin:auto;
+}
+.post-show-inner{
+  width:85%;
+  margin:auto;
+  background-color: rgba(255,255,255,0.8);
+  border: 1px solid black;
+}
+.post-show-edit{
+  text-align:right;
+}
+.post-show-edit-btn{
+  text-align:center;
+  display:inline-block;
+  width: 100px;
+  background-color: rgba(255,255,255,0.5);
+  border: 2px solid black;
+  border-radius: 5px;
+  color: gray;
+  line-height: 50px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.post-show-edit-btn:hover{
+  text-decoration:none;
+  color:black;
+  background-color: lightgray;
+  transition:all;
+}
+.post-show-page-heading{
+  text-align:center;
+  height:30px;
+  line-height:30px;
+}
+.post-show-wrapper{
+  padding:30px 0;
+  width:90%;
+  margin:auto;
+}
+.post-show-flex{
+  display:flex;
+  width:100%;
+  padding-top:30px;
+  margin-bottom:50px;
+}
+.post-show-left{
+  width:70%;
+  text-align:center;
+}
+.post-show-right{
+  width:30%;
+}
+.post-show-left-box{
+  width:90%;
+}
+.post-show-left-image{
+max-width:100%;
+height:auto;
+border:1px solid black;
+border-radius:10px;
+background-color:white;
+}
+.post-show-page-wrapper{
+  margin:auto;
+  width:70%;
+  margin-bottom:50px;
+}
+.post-show-page-profile{
+  width:100%;
+  min-height:150px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+  box-sizing: border-box;
+}
+.table-text{
+  margin-bottom:20px;
+}
+.post-show-table-fish{
+  margin-bottom:50px;
+}
+.post-show-link-table a{
+  color:black;
+}
+.post-show-link-table a:hover{
+  color:black;
+  text-decoration: none;
+}
