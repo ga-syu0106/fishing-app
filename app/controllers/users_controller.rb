@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only:[:show, :edit, :update]
+  before_action :authenticate_user!, except:[:show]
   def show
     @posts =Post.where(user_id: params[:id]).paginate(page: params[:page], per_page: 8).order(fishing_date: "DESC").includes(:user)
   end
