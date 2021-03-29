@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :find_user, only:[:show, :edit, :update]
   before_action :authenticate_user!, except:[:show]
+  before_action :check_user, only:[:edit,:update]
   def show
     @posts =Post.where(user_id: params[:id]).paginate(page: params[:page], per_page: 8).order(fishing_date: "DESC").includes(:user)
   end
@@ -24,6 +25,10 @@ class UsersController < ApplicationController
 
     def params_user
       params.require(:user).permit(:nickname, :user_image, :gender, :municipality_id, :age, :history, :style_id, :profile)
+    end
+
+    def check_user
+      redirect_to root_path unless @user.id == current_user.id
     end
 
 end

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :find_post, only:[:show, :edit, :update]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, only:[:edit,:update]
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 8).order(created_at: "DESC").includes(:user)
@@ -43,4 +44,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def check_user
+    redirect_to root_path unless @post.user.id == current_user.id
+  end
 end
