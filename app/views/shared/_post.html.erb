@@ -5,7 +5,7 @@
 <% @posts.each do |post| %>
 <div class="col-12 col-md-3">
 <div class="index-fish-indiv">
-<%= link_to "#" do%>
+<%= link_to post_path(post) do%>
 <div class="index-fish-image-box">
 <% if post.fish_image.attached? %>
   <%= image_tag post.fish_image, class:"index-fish-image" %>
@@ -32,7 +32,7 @@
         </div>
   </div>
   <div class="index-date">
-  <%= post.fishing_date %>
+  <%= post.fishing_date.strftime("%Y年%m月%d日") %>
   </div>
   <div class="index-municipality">
   <%= link_to post.municipality.name, "#", class:"post-index-fish-link" %>

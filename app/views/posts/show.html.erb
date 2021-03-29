@@ -1,0 +1,110 @@
+<%= render 'shared/header' %>
+<div class="post-show-main">
+  <div class="post-show-inner">
+      <div class="post-show-wrapper">
+      <div class ="post-show-edit">
+      <%= link_to "編集", edit_user_path(@post), class:"post-show-edit-btn" %>
+      </div>
+      <h2 class="post-show-page-heading">
+        <%= "#{@post.user.nickname}さんの#{@post.fishing_date.strftime("%Y年%m月%d日")}の釣果"%>
+      </h2>
+
+      <div class="post-show-flex">
+      <div class="post-show-left">
+      <div class="post-show-left-box">
+      <% if @post.fish_image.attached? %>
+        <%= image_tag @post.fish_image, class:"post-show-left-image" %>
+      <% else %>
+        <%= image_tag "fishing_fish.png", class:"post-show-left-image" %>
+      <% end %>
+      </div>
+      </div>
+
+      <div class="post-show-right">
+      <div class="post-show-table-fish">
+      <table class="table">
+            <h4 class="table-text">釣果情報</h4>
+        <tbody>
+          <tr>
+            <th class="table-col1">魚種</th>
+            <td class="table-col2 post-show-link-table"><%= link_to @post.fish_kind.name, "#" %></td>
+          </tr>
+
+          <tr>
+            <th class="table-col1">魚名</th>
+            <td class="table-col2"><%= @post.fish_name %></td>
+          </tr>
+
+          <tr>
+            <th class="table-col1">釣った地域</th>
+            <td class="table-col2 post-show-link-table"><%= link_to @post.municipality.name, "#" %></td>
+          </tr>
+
+          <tr>
+            <th class="table-col1">釣った場所</th>
+            <td class="table-col2"><%= @post.spot %></td>
+          </tr>
+
+          <tr>
+            <th class="table-col1">日付</th>
+            <td class="table-col2"><%= @post.fishing_date.strftime("%Y年%m月%d日") %></td>
+          </tr>
+
+          <tr>
+            <th class="table-col1">時間</th>
+            <td class="table-col2"><%= @post.fishing_time.strftime("%H時%M分") %></td>
+          </tr>
+
+          <tr>
+            <th class="table-col1">天候</th>
+            <td class="table-col2"><%= @post.weather.name %></td>
+          </tr>
+
+        </tbody>
+      </table>
+      </div>
+
+      <div class="post-show-table-fish">
+      <table class="table">
+      <h4 class= table-text>道具情報</h4>
+        <tbody>
+
+           <tr>
+            <th class="table-col1">仕掛け</th>
+            <td class="table-col2"><%= @post.gimmick %></td>
+          </tr>
+
+           <tr>
+            <th class="table-col1">ロッド</th>
+            <td class="table-col2"><%= @post.rod %></td>
+          </tr>
+
+           <tr>
+            <th class="table-col1">リール</th>
+            <td class="table-col2"><%= @post.reel %></td>
+          </tr>
+
+           <tr>
+            <th class="table-col1">ライン</th>
+            <td class="table-col2"><%= @post.line %></td>
+          </tr>
+
+          </tbody>
+          </table>
+          </div>
+      </div>
+    </div>
+    <div class="post-show-page-wrapper">
+      <h5 class="post-show-page-heading">
+        <%= "詳細" %>
+      </h5>
+      <div class="post-show-page-profile">
+        <%= simple_format(@post.explanation)%>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
