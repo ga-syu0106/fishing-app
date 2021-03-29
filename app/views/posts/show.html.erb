@@ -4,7 +4,11 @@
       <div class="post-show-wrapper">
         <% if user_signed_in? && current_user.id == @post.user.id %>
       <div class ="post-show-edit">
+
       <%= link_to "編集", edit_post_path(@post), class:"post-show-edit-btn" %>
+      
+      <%= link_to "削除", post_path(@post), method: :delete, class:"post-show-destroy-btn" %>
+
       </div>
       <% end %>
       <h2 class="post-show-page-heading">
