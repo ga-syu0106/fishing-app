@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :find_post, only:[:show, :edit, :update]
+  before_action :find_post, only:[:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :check_user, only:[:edit,:update]
+  before_action :check_user, only:[:edit,:update,:destroy]
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 8).order(created_at: "DESC").includes(:user)
@@ -31,6 +31,14 @@ class PostsController < ApplicationController
       redirect_to post_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      redirect_to root_path
+    else
+      render :show
     end
   end
 
