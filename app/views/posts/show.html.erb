@@ -3,7 +3,7 @@
   <div class="post-show-inner">
       <div class="post-show-wrapper">
       <div class ="post-show-edit">
-      <%= link_to "編集", edit_user_path(@post), class:"post-show-edit-btn" %>
+      <%= link_to "編集", edit_post_path(@post), class:"post-show-edit-btn" %>
       </div>
       <h2 class="post-show-page-heading">
         <%= "#{@post.user.nickname}さんの#{@post.fishing_date.strftime("%Y年%m月%d日")}の釣果"%>
@@ -25,6 +25,12 @@
       <table class="table">
             <h4 class="table-text">釣果情報</h4>
         <tbody>
+
+          <tr>
+            <th class="table-col1">釣った人</th>
+            <td class="table-col2 post-show-link-table"><%= link_to @post.user.nickname, user_path(@post.user) %></td>
+          </tr>
+
           <tr>
             <th class="table-col1">魚種</th>
             <td class="table-col2 post-show-link-table"><%= link_to @post.fish_kind.name, "#" %></td>
