@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        gender: 性別
+      post:
+        fishing_date: 釣った日 
+        fishing_time: 釣った時間
+        gimmick: 仕掛け
+        weather_id: 天候
+        municipality_id: 釣った地域(市町村)
+        fish_kind_id: 魚種
