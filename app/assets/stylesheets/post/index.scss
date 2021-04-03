@@ -3,10 +3,12 @@
   background-size: cover;
   padding:50px 0 50px;;
 }
+.post-index-text-box{
+  text-align: center;
+}
 .post-index-text{
-  width:20%;
+  display: inline-block;
   border-bottom:2px solid rgb(33, 33, 201);
-  text-align:center;
   font-weight: bold;
   margin:auto;
   margin-bottom:30px;
@@ -48,7 +50,7 @@
   }
 }
 .index-fish-image{
-  width:100%;
+  width:99%;
   height:100%;
   object-fit: contain;
   position:absolute;

@@ -39,7 +39,7 @@
 
           <tr>
             <th class="table-col1">魚種</th>
-            <td class="table-col2 post-show-link-table"><%= link_to @post.fish_kind.name, "#" %></td>
+            <td class="table-col2 post-show-link-table"><%= link_to @post.fish_kind.name, posts_path(fish_kind_id: @post.fish_kind_id)  %></td>
           </tr>
 
           <tr>
@@ -49,7 +49,7 @@
 
           <tr>
             <th class="table-col1">釣った地域</th>
-            <td class="table-col2 post-show-link-table"><%= link_to @post.municipality.name, "#" %></td>
+            <td class="table-col2 post-show-link-table"><%= link_to @post.municipality.name, posts_path(municipality_id: @post.municipality_id) %></td>
           </tr>
 
           <tr>

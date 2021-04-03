@@ -4,7 +4,17 @@ class PostsController < ApplicationController
   before_action :check_user, only:[:edit,:update,:destroy]
 
   def index
+    if params[:municipality_id]
+      @municipality = Post.where(municipality_id: params[:municipality_id])
+      @posts = @municipality.paginate(page: params[:page], per_page: 8).order(created_at: "DESC").includes(:user)
+      @post = @posts.first
+    elsif params[:fish_kind_id]
+      @fish_kind = Post.where(fish_kind_id: params[:fish_kind_id])
+      @posts = @fish_kind.paginate(page: params[:page], per_page: 8).order(created_at: "DESC").includes(:user)
+      @post = @posts.first
+    else
     @posts = Post.paginate(page: params[:page], per_page: 8).order(created_at: "DESC").includes(:user)
+    end
   end
   
   def new

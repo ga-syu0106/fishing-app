@@ -86,6 +86,9 @@
         </div>
       </div>
       <div class="fish-list">
+      <div class="fish-list-text-box">
+      <h2 class="fish-list-text"><%= @user.nickname%>の投稿一覧</h2>
+      </div>
         <%= render "shared/post", partial: @posts %>
       </div>
     </div>
