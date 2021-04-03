@@ -1,0 +1,108 @@
+<%= render 'shared/header' %>
+<div class="municipality-index">
+<div class="municipality-box">
+<div class="municipality-list">
+
+  <div class="municipality-text">
+  <h2> 市町村ごとの釣果投稿</h2>
+  </div>
+
+<div class="municipality-list-indiv">
+<h3>あ行</h3>
+<div class = "row">
+<% municipalities = @municipalities.where(id: 1..13) %>
+<% municipalities.each do |municipality| %>
+<div class="col-12 col-md-2 municipality-list-indiv-box">
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
+</div>
+<% end %>
+</div>
+</div>
+
+  <div class="municipality-list-indiv">
+  <h3>か行</h3>
+    <div class="row">
+<% municipalities = @municipalities.where(id: 14..22) %>
+<% municipalities.each do |municipality| %>
+<div class="col-12 col-md-2 municipality-list-indiv-box">
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
+</div>
+<% end %>
+</div>
+</div>
+
+  <div class="municipality-list-indiv">
+  <h3>さ行</h3>
+    <div class="row">
+<% municipalities = @municipalities.where(id: 23..25) %>
+<% municipalities.each do |municipality| %>
+<div class="col-12 col-md-2 municipality-list-indiv-box">
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
+</div>
+<% end %>
+</div>
+</div>
+
+  <div class="municipality-list-indiv">
+  <h3>た行</h3>
+    <div class="row">
+<% municipalities = @municipalities.where(id: 26..42) %>
+<% municipalities.each do |municipality| %>
+<div class="col-12 col-md-2 municipality-list-indiv-box">
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
+</div>
+<% end %>
+</div>
+</div>
+
+  <div class="municipality-list-indiv">
+  <h3>な行</h3>
+    <div class="row">
+<% municipalities = @municipalities.where(id: 43..46) %>
+<% municipalities.each do |municipality| %>
+<div class="col-12 col-md-2 municipality-list-indiv-box">
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
+</div>
+<% end %>
+</div>
+</div>
+
+  <div class="municipality-list-indiv">
+  <h3>は行</h3>
+    <div class="row">
+<% municipalities = @municipalities.where(id: 47..50) %>
+<% municipalities.each do |municipality| %>
+<div class="col-12 col-md-2 municipality-list-indiv-box">
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
+</div>
+<% end %>
+</div>
+</div>
+
+  <div class="municipality-list-indiv">
+  <h3>ま行</h3>
+    <div class="row">
+<% municipalities = @municipalities.where(id: 51..53) %>
+<% municipalities.each do |municipality| %>
+<div class="col-12 col-md-2 municipality-list-indiv-box">
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
+</div>
+<% end %>
+</div>
+</div>
+
+  <div class="municipality-list-indiv">
+  <h3>や行</h3>
+  <div class="row">
+<% municipality = @municipalities.find_by(id: 54) %>
+<div class="col-12 col-md-2 municipality-list-indiv-box">
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id),class:"municipality-list-indiv-text" %>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<%= render 'shared/footer' %>

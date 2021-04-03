@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :users, only:[:show, :edit, :update]
   resources :posts
+  resources :municipalities, only:[:index]
+  resources :fish_kinds, only:[:index]
 end
