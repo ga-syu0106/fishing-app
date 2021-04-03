@@ -25,7 +25,7 @@
 <% municipalities = @municipalities.where(id: 14..22) %>
 <% municipalities.each do |municipality| %>
 <div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to municipality.name, root_path, class: "municipality-list-indiv-text" %>
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
 </div>
 <% end %>
 </div>
@@ -37,7 +37,7 @@
 <% municipalities = @municipalities.where(id: 23..25) %>
 <% municipalities.each do |municipality| %>
 <div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to municipality.name, root_path, class: "municipality-list-indiv-text" %>
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
 </div>
 <% end %>
 </div>
@@ -49,7 +49,7 @@
 <% municipalities = @municipalities.where(id: 26..42) %>
 <% municipalities.each do |municipality| %>
 <div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to municipality.name, root_path, class: "municipality-list-indiv-text" %>
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
 </div>
 <% end %>
 </div>
@@ -61,7 +61,7 @@
 <% municipalities = @municipalities.where(id: 43..46) %>
 <% municipalities.each do |municipality| %>
 <div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to municipality.name, root_path, class: "municipality-list-indiv-text" %>
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
 </div>
 <% end %>
 </div>
@@ -73,7 +73,7 @@
 <% municipalities = @municipalities.where(id: 47..50) %>
 <% municipalities.each do |municipality| %>
 <div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to municipality.name, root_path, class: "municipality-list-indiv-text" %>
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
 </div>
 <% end %>
 </div>
@@ -85,7 +85,7 @@
 <% municipalities = @municipalities.where(id: 51..53) %>
 <% municipalities.each do |municipality| %>
 <div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to municipality.name, root_path, class: "municipality-list-indiv-text" %>
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id), class: "municipality-list-indiv-text" %>
 </div>
 <% end %>
 </div>
@@ -96,7 +96,7 @@
   <div class="row">
 <% municipality = @municipalities.find_by(id: 54) %>
 <div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to municipality.name, root_path,class:"municipality-list-indiv-text" %>
+<%= link_to municipality.name, posts_path(municipality_id: municipality.id),class:"municipality-list-indiv-text" %>
 </div>
 </div>
 </div>
