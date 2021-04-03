@@ -16,6 +16,7 @@ class PostsController < ApplicationController
       @post = @posts.first
     else
     @posts = Post.paginate(page: params[:page], per_page: 8).order(created_at: "DESC").includes(:user)
+    @post = @posts.first
     end
   end
   
