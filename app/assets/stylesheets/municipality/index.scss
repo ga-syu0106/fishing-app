@@ -1,0 +1,42 @@
+.municipality-index{
+  background-image: url("../fishes.png");
+  background-size: cover;
+  padding:50px 0 50px;;
+}
+.municipality-box{
+  text-align: center;
+}
+.municipality-text{
+  display: inline-block;
+  border-bottom:2px solid rgb(33, 33, 201);
+  font-weight: bold;
+  margin:auto;
+}
+.municipality-list{
+  width:80%;
+  margin:auto;
+  padding-top:30px;
+  background-color:rgb(240,255,255);
+  border:1px solid black;
+}
+.municipality-list-indiv{
+  width:80%;
+  margin:30px auto;
+  background-color: white;
+  border:2px solid gray;
+  padding:5px 0;
+}
+.municipality-list-indiv h3{
+  text-align:left;
+}
+.municipality-list-indiv-box{
+  margin:5px 0;
+}
+.municipality-list-indiv-text{
+  font-size:20px;
+  color:gray;
+}
+.municipality-list-indiv-text:hover{
+  color:black;
+  text-decoration: none;
+}
