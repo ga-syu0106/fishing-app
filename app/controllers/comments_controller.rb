@@ -7,12 +7,12 @@ class CommentsController < ApplicationController
     else
       @post = @comment.post
       @comments = @post.comments.includes(:user)
-      render "/post/show"
+      render "/posts/show"
     end
   end
 
   private
   def params_comment
     params.require(:comment).permit(:text).merge(user_id: current_user.id, post_id: params[:post_id])
-
+  end
 end

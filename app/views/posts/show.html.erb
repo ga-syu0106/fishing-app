@@ -108,12 +108,41 @@
     </div>
     <div class="post-show-page-wrapper">
       <h5 class="post-show-page-heading">
-        <%= "詳細" %>
+        詳細
       </h5>
       <div class="post-show-page-profile">
         <%= simple_format(@post.explanation)%>
         </div>
       </div>
+    
+    <div class="post-show-comment-form">
+        <h3>コメント一覧</h3>
+        <%= will_paginate(@comments, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
+      <div class="post-show-comment-box">
+        <% @comments.each do |comment| %>
+        <div class="post-show-comment-double">
+        <div class="post-show-comment-name" >
+        <%= link_to comment.user.nickname, user_path(comment.user), class:"comment-name" %><span>:</span>
+        </div>
+        <div class="post-show-comment-text">
+        <%= comment.text %>
+        </div>
+        </div>
+        <% end %>
+        </div>
+    <% if user_signed_in? %>
+      <%= form_with(model: [@post, @comment], local: true) do |f| %>
+      <div class="post-show-comment-area">
+        <%= f.text_area :text, placeholder: "コメントする", rows: "2", class:"comment-area" %>
+        <div class="post-show-comment-btn">
+        <%= f.submit "コメントする", class:"comment-btn" %>
+        </div>
+        </div>
+      <% end %>
+    <% else %>
+      <strong><p>※コメントの投稿には新規登録/ログインが必要です</p></strong>
+    <% end %>
+    </div>
 
     </div>
   </div>

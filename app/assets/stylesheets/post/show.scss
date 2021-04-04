@@ -112,3 +112,47 @@ background-color:white;
   color:black;
   text-decoration: none;
 }
+.post-show-comment-box{
+  width:80%;
+  margin:auto;
+  padding:15px;
+  background-color:white;
+  border:1px solid gray;
+}
+.post-show-comment-double{
+  width:100%;
+  display:flex;
+  margin:auto;
+}
+.post-show-comment-name{
+  width:20%;
+  border-bottom:1px solid gray;
+}
+.comment-name{
+  color:gray;
+}
+.comment-name:hover{
+  color:black;
+  text-decoration: none;
+}
+.post-show-comment-text{
+  width:80%;
+  border-bottom:1px solid gray;
+}
+.post-show-comment-area{
+  margin:auto;
+  width:80%;
+}
+.comment-area{
+  width:100%;
+  margin:30px auto 0;
+  resize:none;
+}
+.post-show-comment-btn{
+  display:inline-block;
+  width:100%;
+  text-align:center;
+}
+.comment-btn{
+font-size:20px;
+}
