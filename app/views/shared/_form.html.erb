@@ -135,6 +135,10 @@
   </div>
 
   <div class='register-btn'>
+   <% if @post.gimmick == nil %>
     <%= f.submit "投稿する" ,class:"fish-new-red-btn" %>
+    <% else %>
+    <%= f.submit "編集する" ,class:"fish-new-red-btn" %>
+    <% end %>
   </div>
 <% end %>

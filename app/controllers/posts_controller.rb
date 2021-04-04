@@ -34,6 +34,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @post.comments.paginate(page: params[:page], per_page: 8).order(created_at: "ASC").includes(:user)
   end
 
   def edit
