@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   def show
     gon.post = @post
     @comment = Comment.new
-    @comments = @post.comments.paginate(page: params[:page], per_page: 8).order(created_at: 'ASC').includes(:user)
+    @comments = @post.comments.paginate(page: params[:page], per_page: 8).order(created_at: 'DESC').includes(:user)
   end
 
   def edit
