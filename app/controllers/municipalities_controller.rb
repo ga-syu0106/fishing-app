@@ -1,5 +1,5 @@
 class MunicipalitiesController < ApplicationController
-  def index 
+  def index
     @municipalities = Municipality.all
   end
 end
