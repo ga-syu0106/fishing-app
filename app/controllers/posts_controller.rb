@@ -44,6 +44,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post_one = @post
     gon.post = @post
   end
 
@@ -51,6 +52,8 @@ class PostsController < ApplicationController
     if @post.update(params_post)
       redirect_to post_path
     else
+      @post_one = Post.new
+      gon.post = @post_one
       render :edit
     end
   end
