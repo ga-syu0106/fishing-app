@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   
   def new
     @post = Post.new
+    gon.post = @post
   end
 
   def create
@@ -34,11 +35,13 @@ class PostsController < ApplicationController
   end
 
   def show
+    gon.post = @post
     @comment = Comment.new
     @comments = @post.comments.paginate(page: params[:page], per_page: 8).order(created_at: "ASC").includes(:user)
   end
 
   def edit
+    gon.post = @post
   end
 
   def update
@@ -59,7 +62,7 @@ class PostsController < ApplicationController
 
   private
   def params_post
-    params.require(:post).permit(:fish_image, :fish_kind_id, :fish_name, :explanation, :fishing_date, :fishing_time, :weather_id, :municipality_id, :spot, :gimmick, :rod, :reel, :line).merge(user_id: current_user.id)
+    params.require(:post).permit(:fish_image, :fish_kind_id, :fish_name, :explanation, :fishing_date, :fishing_time, :weather_id, :municipality_id, :spot, :latitude, :longitude, :gimmick, :rod, :reel, :line).merge(user_id: current_user.id)
   end
 
 
