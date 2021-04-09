@@ -39,4 +39,4 @@ function initMap(){
 </script>
 <h5>釣果地図</h5>
 <h6>※ピンが立っていない場合はMAPが未設定です</h6>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCde3KY2hbZ5Gm81547Py4n3QojS7-kUYA&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
