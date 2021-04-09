@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2021_04_03_090908) do
     t.time "fishing_time", null: false
     t.integer "municipality_id", null: false
     t.string "spot"
+    t.float "latitude"
+    t.float "longitude"
     t.integer "weather_id", null: false
     t.integer "fish_kind_id", null: false
     t.string "fish_name"

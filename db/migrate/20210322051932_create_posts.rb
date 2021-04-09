@@ -5,6 +5,8 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.time :fishing_time,       null: false
       t.integer :municipality_id, null: false
       t.string :spot
+      t.float :latitude
+      t.float :longitude
       t.integer :weather_id,      null: false
       t.integer :fish_kind_id,    null: false
       t.string :fish_name
