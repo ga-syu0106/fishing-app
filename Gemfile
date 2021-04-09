@@ -63,3 +63,5 @@ gem 'pry-rails'
 gem 'will_paginate-bootstrap4'
 gem "aws-sdk-s3", require: false
 gem 'rails-i18n'
+gem 'geocoder'
+gem 'gon'

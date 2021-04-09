@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+before_action
   def create
     @comment = Comment.new(params_comment)
     if @comment.save
