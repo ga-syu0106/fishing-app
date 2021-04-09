@@ -146,7 +146,7 @@
   </div>
 
   <div class='register-btn'>
-   <% if @post.gimmick == nil %>
+   <% if @post.gimmick == nil || @post_one.gimmick == nil %>
     <%= f.submit "投稿する" ,class:"fish-new-red-btn" %>
     <% else %>
     <%= f.submit "編集する" ,class:"fish-new-red-btn" %>

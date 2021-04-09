@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post_one = @post
     gon.post = @post
   end
 
@@ -30,7 +31,9 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      render :new
+      @post_one = Post.new
+      gon.post = @post_one
+      render "posts/new"
     end
   end
 
