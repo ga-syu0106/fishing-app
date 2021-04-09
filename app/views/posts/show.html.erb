@@ -23,6 +23,9 @@
       <% else %>
         <%= image_tag "fishing_fish.png", class:"post-show-left-image" %>
       <% end %>
+      <div class="mapmap">
+      <%= render '/shared/map_show', locals:{post: @post} %>
+      </div>
       </div>
       </div>
 

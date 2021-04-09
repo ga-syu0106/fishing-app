@@ -1,0 +1,79 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCde3KY2hbZ5Gm81547Py4n3QojS7-kUYA&callback=initMap" async defer></script>
+
+<h5 id="target_latitude"></h5>
+<div id='map'></div>
+
+<p>※検索するとピンが立ち、投稿した時のピンの位置が確認できます</p>
+
+<style>
+#map {
+  height:300px;
+  width:300px;
+  border:1px solid black;
+  margin:0 auto 10px;
+}
+</style>
+
+<script>
+let map
+let geocoder
+let marker
+let pos
+let lat
+let lng
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+  if(gon.post.latitude == null ) {
+    map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 35.05826, lng:137.37793},
+    zoom: 8,
+  })
+  }else{
+    var test ={lat: gon.post.latitude, lng: gon.post.longitude }
+    map = new google.maps.Map(document.getElementById('map'), {
+    center: test,
+    zoom: 12
+      })
+        marker = new google.maps.Marker({
+        map: map,
+        position: test
+        })
+  }
+}
+
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location)
+      map.setZoom(12)
+      if(marker != null){
+        marker.setMap(null)
+      }
+        marker = null
+
+      marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location,
+      })
+
+      pos = marker.getPosition()
+      lat = pos.lat()
+      lng = pos.lng()
+      const map_lat = document.getElementById('map_latitude')
+      const map_lng = document.getElementById('map_longitude')
+      console.log(lat)
+      console.log(lng)
+      map_lat.value = lat
+      map_lng.value = lng
+
+
+
+    } else {
+        alert('該当する結果がありませんでした：' + status);
+    }
+  })
+}
+</script>
