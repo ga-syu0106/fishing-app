@@ -26,6 +26,8 @@
 | fishing_time     | time       | null: false                    |
 | municipality_id  | integer    | null: false                    |
 | spot             | string     |                                |
+| latitude         | float      |                                |
+| longitude        | float      |                                |
 | weather_id       | integer    | null: false                    |
 | fish_kind_id     | integer    | null: false                    |
 | fish_name        | string     |                                |
