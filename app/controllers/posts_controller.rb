@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     else
       @post_one = Post.new
       gon.post = @post_one
-      render "posts/new"
+      render 'posts/new'
     end
   end
 

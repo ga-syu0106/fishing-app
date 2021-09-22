@@ -1,0 +1,91 @@
+<%= render "shared/header" %>
+<div class="top">
+  <div class="top-thumbnail">
+    <div class="top-title">
+      <h1>みんなで作ろう 釣りMAP</h1>
+      <h2>in愛知</h2>
+    </div>
+    <div class="top-wave">
+      <img src="/assets/wave.svg">
+    </div>
+  </div>
+
+  <div class="main-title">
+    <h1>サイト紹介</h1>
+  </div>
+
+  <div class="top-all">
+    <div class="top-main">
+      <div class="main-first">
+
+        <div class="main-ex main-first-ex">
+          <div class="ex-image">
+            <%= image_tag "watch.png", class:"ex-png" %>
+          </div>
+          <div class="ex-text">
+            <h3 class="ex-text-title">魚が簡単に調べられる</h3>
+            <p>[市町村ごとの釣果]・[魚種ごとの釣果]を<br>簡単に検索できます。</p>
+            <p>[魚を調べる]をクリックして<br>今すぐ検索してみよう！</p>
+          </div>
+        </div>
+
+        <div class="main-ex main-first-ex">
+          <div class="ex-image">
+            <%= image_tag "map.png", class:"ex-png" %>
+          </div>
+          <div class="ex-text">
+            <h3 class="ex-text-title">MAPで釣り場が<br>わかりやすい</h3>
+            <p>釣果の投稿にGoogleMapを搭載。</p>
+            <p>どこの釣り場でどんな魚が<br>釣れるのか、よりわかりやすく！</p>
+          </div>
+        </div>
+
+        <div class="main-ex main-first-ex">
+          <div class="ex-image">
+            <%= image_tag "photo.png", class:"ex-png" %>
+          </div>
+          <div class="ex-text">
+            <h3 class="ex-text-title">自分の釣果を<br>簡単に残せる</h3>
+            <p>釣果投稿機能により自分の釣果を<br>保存することができます。</p>
+            <p>釣果をいつでも見返すことが可能に!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-second">
+
+        <div class="main-ex main-second-ex ex-second-left">
+          <div class="ex-image">
+            <%= image_tag "comment.png", class:"ex-png" %>
+          </div>
+          <div class="ex-text">
+            <h3 class="ex-text-title">オープンチャットで<br>直接質問できる！</h3>
+            <p>釣果の詳細画面にコメント機能を搭載。</p>
+            <p>当時の状況や混雑具合など細かいことを<br>いつでも聞ける！</p>
+          </div>
+        </div>
+
+        <div class="main-ex main-second-ex ex-second-right">
+          <div class="ex-image">
+            <%= image_tag "comingsoon.png", class:"ex-png comingsoon" %>
+          </div>
+          <div class="ex-text">
+            <h3 class="ex-text-title">機能追加予定…</h3>
+            <p>新たな機能の追加をお楽しみに!!</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="top-middle">
+      <div class="middle-btn-space">
+        <%= link_to "まずは釣果をチェック", posts_path, class: "middle-btn middle-btn-left"%>
+        <%= link_to "さっそく投稿してみる", new_post_path, class: "middle-btn middle-btn-right"%>
+      </div>
+    </div>
+
+  </div>
+</div>
+<%= render "shared/footer" %>
