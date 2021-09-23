@@ -11,6 +11,10 @@
 </head>
 
 <body>
+  <% if current_page?(controller: 'tops', action: 'index') %>
+  <%else%>
+  <div class="space-header"></div>
+  <% end %>
   <%= yield %>
 </body>
 
