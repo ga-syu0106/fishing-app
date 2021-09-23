@@ -1,16 +1,16 @@
 <%= render 'shared/header'%>
 <div class="post-index">
-<div class="post-index-fish">
-  <div class="post-index-text-box">
-    <%if params[:municipality_id] %>
+  <div class="post-index-fish">
+    <div class="post-index-text-box">
+      <%if params[:municipality_id] %>
       <h2 class="post-index-text"><%= @municipality_name.name %>の投稿一覧</h2>
-    <% elsif params[:fish_kind_id] %>
+      <% elsif params[:fish_kind_id] %>
       <h2 class="post-index-text"><%= @fish_kind_name.name %>の投稿一覧</h2>
-    <% else %>
-      <h2 class="post-index-text">みんなの投稿一覧</h2>
-    <% end %>
+      <% else %>
+      <h2 class="post-index-text">最新の投稿一覧</h2>
+      <% end %>
     </div>
-<%= render "shared/post", partial: @posts %>
-</div>
+    <%= render "shared/post", partial: @posts %>
+  </div>
 </div>
 <%= render 'shared/footer'%>
