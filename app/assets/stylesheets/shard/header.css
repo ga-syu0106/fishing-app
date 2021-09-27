@@ -1,5 +1,26 @@
 .top-header-nav {
   position: fixed;
   z-index: 5px;
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgb(250, 250, 255, 0.7);
+}
+.navbar{
+  border-bottom:1px solid gray;
+}
+.dropdown-menu.show{
+  border:none;
+  background-color: rgb(250, 250, 255, 0);
+}
+.nav-link-tag{
+  display:block;
+  color: #00000080;
+}
+.tag-one{
+  padding-bottom:8px;
+}
+.tag-two{
+  padding-top:8px;
+}
+.nav-link-tag:hover{
+  color: #000000E6;
+  text-decoration: none;
 }
