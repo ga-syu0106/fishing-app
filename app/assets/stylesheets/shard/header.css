@@ -9,16 +9,11 @@
 .dropdown-menu.show{
   border:none;
   background-color: rgb(250, 250, 255, 0);
+  padding:0;
 }
 .nav-link-tag{
   display:block;
   color: #00000080;
-}
-.tag-one{
-  padding-bottom:8px;
-}
-.tag-two{
-  padding-top:8px;
 }
 .nav-link-tag:hover{
   color: #000000E6;
