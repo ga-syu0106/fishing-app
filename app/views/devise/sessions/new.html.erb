@@ -3,7 +3,7 @@
 <%= form_with model:@user, url: user_session_path, class:'s-main', local: true do |f| %>
 <div class='s-form-wrap'>
   <div class='s-form-header'>
-    <h1 class='s-form-header-text'>Log in</h1>
+    <h1 class='s-form-header-text'>ログイン</h1>
 
     <div class='s-login-flash-message'>
       <%= flash[:notice] %>
@@ -28,7 +28,7 @@
       </div>
 
       <div class='s-form-btn'>
-        <%= f.submit "Log in" ,class:"s-form-send-btn" %>
+        <%= f.submit "ログイン" ,class:"s-form-send-btn" %>
       </div>
 
     </div>

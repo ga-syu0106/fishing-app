@@ -4,7 +4,7 @@
   background-color: rgb(250, 250, 255, 0.7);
 }
 .navbar{
-  border-bottom:1px solid gray;
+  box-shadow:0 0 5px 0 black;
 }
 .dropdown-menu.show{
   border:none;
