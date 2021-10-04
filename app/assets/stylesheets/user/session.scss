@@ -1,10 +1,79 @@
-.form-session{
-  margin-top:30px;
-}
-
-.login-flash-message {
-  font-size: 1.3vw;
+.s-login-flash-message {
+  margin-top:10px;
+  font-size: 15px;
   list-style: circle;
+  font-weight: bold;
   color: rgb(182, 48, 0);
+  text-align: left;
+}
+.s-main{
+  height: 800px;
+  width: 100%;
+  background-color: #E8F0FE;
+  padding:100px 0 ;
+}
+.s-form-wrap{
+  background-color: rgb(255,255,255);
+  width: 30%;
+  min-width: 400px;;
+  margin: 0 auto;
+  padding:50px 0;
   text-align:center;
+  box-shadow: 2px 3px 3px 2px lightgray;
+  border-radius:10px;
+}
+.s-form-header{
+    width:60%;
+    margin: 0 auto;
+}
+.s-form-header-text{
+    font-size:36px;
+    color:rgba(0,0,0,0.8);
+    text-shadow: 0 1px 1px gray;
+}
+.s-form-group{
+    margin-top:40px;
+}
+.s-form-text-wrap{
+    text-align:left;
+}
+.s-input-default {
+  font-size: 18px;
+  background-color: #E8F0FE;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+    padding-left:10px;
+    resize: none;
+}
+.s-form-btn {
+    width: 50%;
+    margin:80px 0 0 auto;
+}
+.s-form-send-btn {
+    width: 100%;
+    background: #0068b6;
+    border-radius: 5px;
+    color: white;
+    line-height: 50px;
+    font-size: 16px;
+    font-family: serif;
+    cursor: pointer;
+    border:1px solid lightgray;
+}
+.s-form-send-btn:hover{
+  background-color: #064da0;
+}
+//750px以下
+@media only screen and (max-width: 750px) {
+  .s-main{
+    background-position: right;
+  }
+  .s-form-header-text{
+    font-size:24px;
+}
+  .s-input-default {
+    font-size: 16px;
+}
 }

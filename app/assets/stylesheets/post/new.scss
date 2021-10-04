@@ -1,26 +1,40 @@
 .fish-new-wrap{
-  margin:auto;
-  padding:30px 0;
+  background-color: rgb(255,255,255);
+  width: 60%;
+  min-width: 400px;;
+  margin: 0 auto;
+  padding:50px 0;
   text-align:center;
-  background-color: rgba(255,255,255,0.9);
-  width:70%;
-  border:1px solid black;
-  border-radius: 5px;
+  box-shadow: 2px 3px 3px 2px lightgray;
+  border-radius:10px;
 }
-
 .fish-new-header{
-  margin:auto;
-  text-align:center;
-  width:80%;
+  width:60%;
+  min-width: 300px;
+  margin: 0 auto;
 }
 .fish-new-header-text{
-  margin: 0 auto 50px auto;
-  width:40%;
-  font-size:32px;
-  border-bottom:2px double gray;
+  font-size:36px;
+  color:rgba(0,0,0,0.8);
+  text-shadow: 0 1px 1px gray;
 }
 .fish-new-group{
-  margin-top:30px;
+  margin-top:20px;
+  text-align:left;
+}
+.fish-input-field{
+  width: 80%;
+  margin:0 auto 0 0 ;
+}
+.fish-input{
+  font-size: 16px;
+  background-color: #E8F0FE;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  padding-left:10px;
+  resize: none;
 }
 .indispensable{
   padding:2px;
@@ -34,32 +48,38 @@
   color:white;
   margin-left:5px;
 }
-.fish-new-text-wrap{
-  font-size:20px;
-}
-.fish-input{
-  width: 60%;
-  height: 50px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
+.fish-image-form{
   font-size: 16px;
-  resize: none;
+  background-color: #E8F0FE;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  margin-right:auto;
+  text-align:left;
+  cursor:pointer;
+  color:#757575;
+  transition:0.5s;
+}
+.fish-image-form:hover{
+  color: black;
+}
+
+.fish-image-form span{
+  line-height:38px;
+  padding-left:10px;
 }
 .fish-prev-image{
-  max-width:500px;
+  max-width:300px;
   width:100%;
   height:auto;
   border:2px solid black;
   border-radius: 5px;
   margin-top:20px;
 }
-.fish-date{
-  width:80%;
+
+.double-fish-new-group{
   display:flex;
-  justify-content: space-evenly;
-  margin:auto;
 }
 .fish-triple-input{
   width:100%;

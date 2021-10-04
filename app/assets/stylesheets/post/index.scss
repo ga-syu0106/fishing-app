@@ -1,48 +1,56 @@
 .post-index{
-  background-image: image-url("fishes.png");
+//  background-image: image-url("post-index.png");
+background-color: rgba(240,240,255,0.3);
   background-size: cover;
-  padding:50px 0 50px;;
-}
-.post-index-text-box{
-  text-align: center;
-}
-.post-index-text{
-  display: inline-block;
-  border-bottom:2px solid rgb(33, 33, 201);
-  font-weight: bold;
-  margin:auto;
-  margin-bottom:30px;
-}
-.post-index-fish{
-  width:80%;
-  margin:auto;
-  padding-top:30px;
-  background-color:rgb(240,255,255);
-  border:1px solid black;
-  min-height:400px;
-}
-.post-index-paginate{
-  margin:auto;
-  text-align:center;
+  width:100%;
 }
 .post-index-fish-indiv{
-  width:90%;
+  width:100%;
+}
+.post-index-boxes{
+  padding-top: 100px;
+  width:80%;
+  min-width: 750px;
+  margin:0 auto;
+}
+.post-index-box{
+margin-bottom:50px;
+}
+.post-index-text-box{
+  background-image: image-url('second-top');
+  background-size:cover;
+  text-align: center;
+  height:400px;
+}
+.post-index-text{
+  line-height: 400px;
+  font-size: 60px;
+  display:inline-block;
+  text-shadow: 0 3px 3px gray;
+  font-family: serif;
+  font-weight: bold;
   margin:auto;
 }
+.post-index-fish-indiv{
+  width:80%;
+  margin: 50px auto 0 ;
+}
 .index-fish-indiv{
-  border:1px solid black;
   width:90%;
   margin:0 auto 30px;
 }
 .index-fish-indiv-text{
-  padding: 5px;
+  padding: 30px 5px;
+  background-color: rgba(255,255,255,0.9);
+  border-top:2px solid lightgray;
 }
 .index-fish-image-box{
+  border-radius:5px 5px 0 0;
   max-width:100%;
   width:100%;
   height:auto;
   position:relative;
-  border-bottom:1px solid black;
+background-position:center;
   background-color:white;
   &::before{
     content:"";
@@ -51,9 +59,11 @@
   }
 }
 .index-fish-image{
-  width:99%;
+  border-radius:5px 5px 0 0;
+  width:100%;
   height:100%;
-  object-fit: contain;
+  object-fit: cover;
+  background-position:center;
   position:absolute;
   top:50%;
   left:50%;
@@ -79,4 +89,13 @@
 .post-index-fish-link:hover{
   color:black;
   text-decoration: none;
+}
+.index-date{
+  padding-top:10px;
+}
+.index-municipality{
+  padding-top:10px;
+}
+.index-fish-kind{
+  padding-top:10px;
 }
