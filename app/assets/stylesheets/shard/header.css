@@ -19,3 +19,11 @@
   color: #000000E6;
   text-decoration: none;
 }
+.navbar-brand img{
+  width:300px;
+}
+@media only screen and (max-width: 750px) {
+  .navbar-brand img{
+    width:200px;
+  }
+}

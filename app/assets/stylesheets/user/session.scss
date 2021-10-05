@@ -7,7 +7,7 @@
   text-align: left;
 }
 .s-main{
-  height: 800px;
+  height: 700px;
   width: 100%;
   background-color: #E8F0FE;
   padding:100px 0 ;
@@ -15,7 +15,7 @@
 .s-form-wrap{
   background-color: rgb(255,255,255);
   width: 30%;
-  min-width: 400px;;
+  min-width: 350px;
   margin: 0 auto;
   padding:50px 0;
   text-align:center;
@@ -29,7 +29,7 @@
 .s-form-header-text{
     font-size:36px;
     color:rgba(0,0,0,0.8);
-    text-shadow: 0 1px 1px gray;
+    text-shadow: 0 2px 2px gray;
 }
 .s-form-group{
     margin-top:40px;
@@ -76,4 +76,7 @@
   .s-input-default {
     font-size: 16px;
 }
+  .s-form-header{
+    width:200px;
+  }
 }

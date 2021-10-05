@@ -2,18 +2,7 @@
 
     <%= render 'shared/error_messages', model: f.object %>
 
-    <div class="fish-new-group">
-      <div class='fish-new-text-wrap'>
-        <label class="fish-new-text">画像
-          <span class="any">任意</span>
-        </label>
-      </div>
-      <div class="fish-input-field">
-        <label for="prev-image-form" class="fish-image-form"><span>ファイルを選択してください</span></label>
-        <%= f.file_field :fish_image, class:"fish-input", id:"prev-image-form" , style:"display:none;" %>
-      </div>
-      <%= image_tag "fishing_fish.png", class:"fish-prev-image", id:"prev-image"%>
-    </div>
+    <h2 class='fish-new-form-wrap'>魚</h2>
 
     <div class="fish-new-group">
       <div class='fish-new-text-wrap'>
@@ -33,56 +22,79 @@
         </label>
       </div>
       <div class="fish-input-field">
-        <%= f.text_field :fish_name, placeholder:"例)イソカサゴ　※カサゴ選択時", class:"fish-input", id:"municipality-sales-status" %>
+        <%= f.text_field :fish_name, placeholder:"イソカサゴ", class:"fish-input", id:"municipality-sales-status" %>
       </div>
     </div>
 
     <div class="fish-new-group">
       <div class='fish-new-text-wrap'>
-        <label class="fish-new-text">釣った日
-          <span class="indispensable">必須</span>
+        <label class="fish-new-text">画像
+          <span class="any">任意</span>
         </label>
       </div>
       <div class="fish-input-field">
-        <% if @post.fishing_date == nil %>
-        <%= f.date_field :fishing_date, class:"fish-input" %>
-        <% else %>
-        <%= f.date_field :fishing_date, default:{year: @post.fishing_date.year,month: @post.fishing_date.month,day: @post.fishing_date.day}, class:"fish-input" %>
-        <% end %>
+        <label for="prev-image-form" class="fish-image-form"><span>ファイルを選択してください</span></label>
+        <%= f.file_field :fish_image, class:"fish-input", id:"prev-image-form" , style:"display:none;" %>
       </div>
+      <%= image_tag "fishing_fish.png", class:"fish-prev-image", id:"prev-image"%>
     </div>
 
+    <h2 class='fish-new-form-wrap'>日時・場所</h2>
+
     <div class="double-fish-new-group">
-      <div class="fish-new-group-double">
+      <div class="fish-new-group-double fish-new-group">
+        <div class='fish-new-text-wrap'>
+          <label class="fish-new-text">釣った日
+            <span class="indispensable">必須</span>
+          </label>
+        </div>
+        <div class="fish-input-field-double">
+          <% if @post.fishing_date == nil %>
+          <%= f.date_field :fishing_date, class:"fish-input" %>
+          <% else %>
+          <%= f.date_field :fishing_date, default:{year: @post.fishing_date.year,month: @post.fishing_date.month,day: @post.fishing_date.day}, class:"fish-input" %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="fish-new-group-double fish-new-group">
         <div class='fish-new-text-wrap'>
           <label class="fish-new-text">釣った時間
             <span class="indispensable">必須</span>
           </label>
         </div>
-        <% if @post.fishing_time == nil %>
-        <%= f.time_field :fishing_time, class:"fish-input" %>
-        <% else %>
-        <%= f.time_field :fishing_time, default:{time: @post.fishing_time.time} , class:"fish-input" %>
-        <% end %>
+        <div class="fish-input-field-double">
+          <% if @post.fishing_time == nil %>
+          <%= f.time_field :fishing_time, class:"fish-input" %>
+          <% else %>
+          <%= f.time_field :fishing_time, default:{time: @post.fishing_time.time} , class:"fish-input" %>
+          <% end %>
+        </div>
       </div>
+    </div>
 
-      <div class="fish-new-group-double">
+    <div class="double-fish-new-group">
+      <div class="fish-new-group-double fish-new-group">
         <div class='fish-new-text-wrap'>
           <label class="fish-new-text">天候
             <span class="indispensable">必須</span>
           </label>
         </div>
-        <%= f.collection_select(:weather_id, Weather.all, :id, :name, {prompt:"選択してください"}, {class:"fish-input"}) %>
+        <div class="fish-input-field-double">
+          <%= f.collection_select(:weather_id, Weather.all, :id, :name, {prompt:"選択してください"}, {class:"fish-input"}) %>
+        </div>
       </div>
-    </div>
 
-    <div class="fish-new-group">
-      <div class='fish-new-text-wrap'>
-        <label class="fish-new-text">釣った地域(市町村)
-          <span class="indispensable">必須</span>
-        </label>
+      <div class="fish-new-group-double fish-new-group">
+        <div class='fish-new-text-wrap'>
+          <label class="fish-new-text">釣った地域
+            <span class="indispensable">必須</span>
+          </label>
+        </div>
+        <div class="fish-input-field-double">
+          <%= f.collection_select(:municipality_id, Municipality.all, :id, :name, {prompt:"選んでください"}, {class:"fish-input"}) %>
+        </div>
       </div>
-      <%= f.collection_select(:municipality_id, Municipality.all, :id, :name, {prompt:"選んでください"}, {class:"fish-input"}) %>
     </div>
 
     <div class="fish-new-group">
@@ -91,27 +103,43 @@
           <span class="any">任意</span>
         </label>
       </div>
-      <%= f.text_area :spot, placeholder:"(例)西浦海岸の堤防", class:"fish-input" %>
+      <div class="fish-input-field">
+        <%= f.text_field :spot, placeholder:"西浦海岸の堤防", class:"fish-input" %>
+      </div>
     </div>
 
-    <label class="map-text">MAP
-      <span class="any">任意</span>
-    </label>
-    <div class="map_address_form">
-      <%= f.text_area :address, placeholder:"(例)愛知県蒲郡市西浦海岸", id:"address", class:"map_address_form" %>
-      <%= f.hidden_field :latitude, id:"map_latitude"%>
-      <%= f.hidden_field :longitude, id:"map_longitude"%>
-    </div>
-    <input type="button" value="検索する" onclick="codeAddress()" class="map_address_btn">
-    <%= render '/shared/map_form'%>
+    <h2 class='fish-new-form-wrap'>地図</h2>
 
+    <div class="fish-new-group">
+      <div class='fish-new-text-wrap'>
+        <label class="fish-new-text">Map
+          <span class="any">任意</span>
+        </label>
+      </div>
+      <div class="map-form">
+        <div class="map-input-field">
+          <%= f.text_field :address, placeholder:"蒲郡市西浦海岸", id:"address", class:"fish-input" %>
+          <%= f.hidden_field :latitude, id:"map_latitude"%>
+          <%= f.hidden_field :longitude, id:"map_longitude"%>
+        </div>
+        <div class="map-input-btn">
+          <input type="button" value="検索する" onclick="codeAddress()" class="map-address-btn">
+        </div>
+      </div>
+      <%= render '/shared/map_form'%>
+    </div>
+
+
+    <h2 class='fish-new-form-wrap'>道具</h2>
     <div class="fish-new-group">
       <div class='fish-new-text-wrap'>
         <label class="fish-new-text">仕掛け
           <span class="indispensable">必須</span>
         </label>
       </div>
-      <%= f.text_area :gimmick, placeholder:"(例)ブラクリ　餌は小海老", class:"fish-input" %>
+      <div class="fish-input-field">
+        <%= f.text_field :gimmick, placeholder:"ブラクリ 餌は小海老", class:"fish-input" %>
+      </div>
     </div>
 
     <div class="fish-new-group">
@@ -120,7 +148,9 @@
           <span class="any">任意</span>
         </label>
       </div>
-      <%= f.text_area :rod, placeholder:"(例)プロトラスト ガンガンテトラ 110L", class:"fish-input" %>
+      <div class="fish-input-field">
+        <%= f.text_field :rod, placeholder:"ガンガンテトラ 110L", class:"fish-input" %>
+      </div>
     </div>
 
     <div class="fish-new-group">
@@ -129,7 +159,9 @@
           <span class="any">任意</span>
         </label>
       </div>
-      <%= f.text_area :reel, placeholder:"(例)ダイワ スーパーコロネット ST-10RL", class:"fish-input" %>
+      <div class="fish-input-field">
+        <%= f.text_field :reel, placeholder:"スーパーコロネット ST-10RL", class:"fish-input" %>
+      </div>
     </div>
 
     <div class="fish-new-group">
@@ -138,8 +170,12 @@
           <span class="any">任意</span>
         </label>
       </div>
-      <%= f.text_area :line, placeholder:"(例)サンライン クインスター 600m 3号", class:"fish-input" %>
+      <div class="fish-input-field">
+        <%= f.text_field :line, placeholder:"クインスター 600m 3号", class:"fish-input" %>
+      </div>
     </div>
+
+    <h2 class='fish-new-form-wrap'>詳細</h2>
 
     <div class="form-group">
       <div class='form-text-wrap'>
@@ -149,15 +185,15 @@
       </div>
       <div class='form-default'>
         <%= f.text_area :explanation, class:"fish-input-big", id:"profile",
-    placeholder:'例)穴釣りで、カサゴが8尾釣れました。 一番大きいサイズで21センチほどでした。帰って煮付けにして食べようと思います！！', maxlength:"1000" %>
+    placeholder:'穴釣りで、カサゴが8尾釣れました。 一番大きいサイズで21センチほどでした。帰って煮付けにして食べようと思います！！', maxlength:"1000" %>
       </div>
     </div>
 
     <div class='register-btn'>
       <% if @post.gimmick == nil || @post_one.gimmick == nil %>
-      <%= f.submit "投稿する" ,class:"fish-new-red-btn" %>
+      <%= f.button "投稿する",type: 'button' ,class:"fish-new-red-btn", onclick: 'submit()' %>
       <% else %>
-      <%= f.submit "編集する" ,class:"fish-new-red-btn" %>
+      <%= f.button "編集する",type: 'button' ,class:"fish-new-red-btn", onclick: 'submit()' %>
       <% end %>
     </div>
     <% end %>
