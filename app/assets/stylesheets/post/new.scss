@@ -130,14 +130,15 @@
   resize: none;
 }
 .fish-new-red-btn {
-  width: 60%;
-  background: red;
+  width: 100%;
+  background: #0068b6;
   border-radius: 5px;
   color: white;
-  line-height: 48px;
+  line-height: 50px;
   font-size: 16px;
+  font-family: serif;
   cursor: pointer;
-  margin-top:30px;
+  border:1px solid lightgray;
 }
 @media only screen and (max-width: 750px) {
   .fish-new-header{
