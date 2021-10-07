@@ -24,7 +24,7 @@
   padding-top: 400px;
   color: #ffffff;
   text-shadow: 0 5px 5px black;
-  font-family: "Caveat", cursive;
+  font-family: serif;
   user-select: none;
 }
 
@@ -131,7 +131,7 @@ justify-content: center;
 .middle-btn-left{
   margin-right:200px;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
   .top-thumbnail {
     height: 500px;
   }
