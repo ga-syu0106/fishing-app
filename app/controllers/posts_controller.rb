@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params_post)
     if @post.save
-      redirect_to root_path
+      redirect_to posts_path
     else
       @post_one = Post.new
       gon.post = @post_one
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   def edit
     @post_one = @post
     gon.post = @post
-    
+
   end
 
   def update
@@ -61,7 +61,7 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.destroy
-      redirect_to root_path
+      redirect_to posts_path
     else
       render :show
     end
