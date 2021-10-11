@@ -1,6 +1,6 @@
 .registration-main{
   width: 100%;
-  background-color: #E8F0FE;
+    background-color: #E8F0FE;
   padding:100px 0 ;
 }
 
@@ -21,8 +21,8 @@
 }
 .form-header-text{
   font-size:36px;
-  color:rgba(0,0,0,0.8);
-  text-shadow: 0 2px 2px gray;
+  font-family: serif;
+  text-shadow: 0 1px 1px gray;
 }
 .form-group{
   margin-top:20px;
@@ -188,7 +188,7 @@ line-height: 40px;;
   background-color: #064da0;
   transition:0.5s;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
   .form-header{
     min-width:300px;
   }

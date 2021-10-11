@@ -1,42 +1,51 @@
+<div class="map-text">
+  <h4 class="table-text table-text-small">釣果地図</h4>
+</div>
 <h5 id="target_latitude"></h5>
 <div id='map'></div>
 
 <style>
-#map {
-  height:300px;
-  width:60%;
-  border:1px solid black;
-  margin:0 auto 10px;
-}
+  #map {
+    width: 80%;
+    height: 300px;
+    border: 1px solid black;
+    margin: 0 auto 10px;
+  }
 </style>
 
 <script type="text/javascript">
-let map
-let geocoder
-let marker
-let lat
-let lng
+  let map
+  let geocoder
+  let marker
+  let lat
+  let lng
 
-function initMap(){
-  geocoder = new google.maps.Geocoder()
-  if(gon.post.latitude == null ) {
-    map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 35.05826, lng:137.37793},
-    zoom: 8,
-  })
-  }else{
-    var test ={lat: gon.post.latitude, lng: gon.post.longitude }
-    map = new google.maps.Map(document.getElementById('map'), {
-    center: test,
-    zoom: 12
+  function initMap() {
+    geocoder = new google.maps.Geocoder()
+    if (gon.post.latitude == null) {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+          lat: 35.05826,
+          lng: 137.37793
+        },
+        zoom: 8,
       })
-        marker = new google.maps.Marker({
+    } else {
+      var test = {
+        lat: gon.post.latitude,
+        lng: gon.post.longitude
+      }
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: test,
+        zoom: 12
+      })
+      marker = new google.maps.Marker({
         map: map,
         position: test
-        })
+      })
+    }
   }
-}
 </script>
-<h5>釣果地図</h5>
-<h6>※ピンが立っていない場合はMAPが未設定です</h6>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+<h6 style="color:gray;">※ピンが立っていない場合はMAPが未設定です</h6>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer>
+</script>

@@ -1,46 +1,64 @@
 .post-index{
-//  background-image: image-url("post-index.png");
-background-color: rgba(240,240,255,0.3);
+  background-color: #E8F0FE;
   background-size: cover;
   width:100%;
 }
 .post-index-fish-indiv{
   width:100%;
 }
-.post-index-boxes{
-  padding-top: 100px;
-  width:80%;
-  min-width: 750px;
-  margin:0 auto;
-}
-.post-index-box{
-margin-bottom:50px;
+.post-index-fish{
+  padding: 50px 0;
 }
 .post-index-text-box{
   background-image: image-url('second-top');
   background-size:cover;
-  text-align: center;
+  text-align:center;
   height:400px;
 }
 .post-index-text{
   line-height: 400px;
-  font-size: 60px;
-  display:inline-block;
-  text-shadow: 0 3px 3px gray;
+  color: #ffffff;
+  text-shadow: 0 5px 5px black;
   font-family: serif;
-  font-weight: bold;
-  margin:auto;
+  user-select: none;
+  font-size: 72px;
+  font-weight: 600;
+  letter-spacing: 15px;
 }
 .post-index-fish-indiv{
+  background-color: rgb(255,255,255);
+  width: 80%;
+  min-width: 750px;
+  padding-top:50px;
+  margin: 0 auto;
+  text-align:center;
+  border-radius:10px;
+}
+.post-index-boxes{
   width:80%;
-  margin: 50px auto 0 ;
+  min-width: 700px;
+  margin:0 auto;
+}
+.post-index-box{
+margin-top:50px;
+}
+.post-index-fish-title{
+  font-family: serif;
+  color: black;
+  opacity:0.8;
+  text-shadow: 0 5px 5px gray;
+  font-size: 40px;
 }
 .index-fish-indiv{
   width:90%;
   margin:0 auto 30px;
+  border:1px solid gray;
+  box-shadow: 2px 2px 2px gray;
+  border-radius:5px;
+  text-align:left;
 }
 .index-fish-indiv-text{
-  padding: 30px 5px;
+  padding: 20px 5px;
   background-color: rgba(255,255,255,0.9);
   border-top:2px solid lightgray;
 }
@@ -98,4 +116,38 @@ background-position:center;
 }
 .index-fish-kind{
   padding-top:10px;
+}
+.fish-pagination ul{
+  justify-content: center;
+  padding-bottom:20px;
+}
+.index-fish-no{
+  margin:0 auto;
+  padding:50px 0 50px;
+  text-shadow: 0 1px 1px black;
+  font-family: serif;
+  font-size: 36px;
+}
+@media only screen and (max-width: 768px) {
+  .post-index-text-box{
+    background-position: center;
+  }
+  .post-index-text{
+    font-size: 48px;
+  }
+  .post-index-fish-title{
+    font-size: 24px;
+  }
+  .post-index-fish-indiv{
+    min-width: 350px;;
+  }
+  .post-index-boxes{
+    min-width:300px;
+  }
+  .index-fish-indiv{
+    width:80%;
+  }
+  .index-fish-no{
+    font-size: 24px;
+  }
 }

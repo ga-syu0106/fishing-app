@@ -1,10 +1,8 @@
-<div class="post-index-fish-indiv">
-  <%= will_paginate(@posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
   <div class="post-index-boxes">
     <div class="row">
       <% if @post != nil%>
       <% @posts.each do |post| %>
-      <div class="col-12 col-md-3 post-index-box">
+      <div class="col-12 col-sm-6 col-md-3 post-index-box">
         <div class="index-fish-indiv">
           <%= link_to post_path(post) do%>
           <div class="index-fish-image-box">
@@ -36,9 +34,11 @@
               <%= post.fishing_date.strftime("%Y年%m月%d日") %>
             </div>
             <div class="index-municipality">
+              <span>地域:</span>
               <%= link_to post.municipality.name, posts_path(municipality_id: post.municipality_id), class:"post-index-fish-link" %>
             </div>
             <div class="index-fish-kind">
+              <span>魚種:</span>
               <%= link_to post.fish_kind.name, posts_path(fish_kind_id: post.fish_kind_id), class:"post-index-fish-link" %>
             </div>
           </div>
@@ -46,9 +46,12 @@
       </div>
       <% end %>
       <%else%>
-      <h3>まだ投稿がありません</h3>
+      <div class="index-fish-no">
+        投稿がありません
+      </div>
       <%end%>
     </div>
+    <div class="fish-pagination">
+      <%= will_paginate(@posts,inner_window: 1, outer_window: 0, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
+    </div>
   </div>
-  <%= will_paginate(@posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
-</div>

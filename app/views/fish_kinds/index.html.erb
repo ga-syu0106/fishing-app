@@ -1,132 +1,132 @@
 <%= render 'shared/header' %>
 <div class="municipality-index">
-<div class="municipality-box">
-<div class="municipality-list">
+  <div class="municipality-box">
+    <div class="municipality-list">
 
-  <div class="municipality-text">
-  <h2> 魚種ごとの釣果投稿</h2>
+      <div class="municipality-text">
+        <h2> 魚種ごとの釣果投稿</h2>
+      </div>
+
+      <div class="municipality-list-indiv">
+        <h3>あ行</h3>
+        <div class="row">
+          <% fish_kinds = @fish_kinds.where(id: 1..20) %>
+          <% fish_kinds.each do |fish_kind| %>
+          <div class="col-6 col-sm-4 col-md-3 municipality-list-indiv-box">
+            <%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="municipality-list-indiv">
+        <h3>か行</h3>
+        <div class="row">
+          <% fish_kinds = @fish_kinds.where(id: 21..41) %>
+          <% fish_kinds.each do |fish_kind| %>
+          <div class="col-6 col-sm-4 col-md-3 municipality-list-indiv-box">
+            <%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="municipality-list-indiv">
+        <h3>さ行</h3>
+        <div class="row">
+          <% fish_kinds = @fish_kinds.where(id: 42..52) %>
+          <% fish_kinds.each do |fish_kind| %>
+          <div class="col-6 col-sm-4 col-md-3 municipality-list-indiv-box">
+            <%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="municipality-list-indiv">
+        <h3>た行</h3>
+        <div class="row">
+          <% fish_kinds = @fish_kinds.where(id: 53..65) %>
+          <% fish_kinds.each do |fish_kind| %>
+          <div class="col-6 col-sm-4 col-md-3 municipality-list-indiv-box">
+            <%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="municipality-list-indiv">
+        <h3>な行</h3>
+        <div class="row">
+          <% fish_kinds = @fish_kinds.where(id: 66..68) %>
+          <% fish_kinds.each do |fish_kind| %>
+          <div class="col-6 col-sm-4 col-md-3 municipality-list-indiv-box">
+            <%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="municipality-list-indiv">
+        <h3>は行</h3>
+        <div class="row">
+          <% fish_kinds = @fish_kinds.where(id: 69..86) %>
+          <% fish_kinds.each do |fish_kind| %>
+          <div class="col-6 col-sm-4 col-md-3 municipality-list-indiv-box">
+            <%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="municipality-list-indiv">
+        <h3>ま行</h3>
+        <div class="row">
+          <% fish_kinds = @fish_kinds.where(id: 87..91) %>
+          <% fish_kinds.each do |fish_kind| %>
+          <div class="col-6 col-sm-4 col-md-3 municipality-list-indiv-box">
+            <%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="municipality-list-indiv">
+        <h3>や行</h3>
+        <div class="row">
+          <% fish_kinds = @fish_kinds.where(id: 92..94) %>
+          <% fish_kinds.each do |fish_kind| %>
+          <div class="col-6 col-sm-4 col-md-3 municipality-list-indiv-box">
+            <%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="municipality-list-indiv">
+        <h3>ら行</h3>
+        <div class="row">
+          <% fish_kinds = @fish_kinds.where(id: 95..97) %>
+          <% fish_kinds.each do |fish_kind| %>
+          <div class="col-6 col-sm-4 col-md-3 municipality-list-indiv-box">
+            <%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="municipality-list-indiv">
+        <h3>その他</h3>
+        <div class="row">
+          <% fish_kind = @fish_kinds.find_by(id: 98) %>
+          <div class="col-6 col-sm-4 col-md-3 municipality-list-indiv-box">
+            <%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id),class:"municipality-list-indiv-text" %>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-
-<div class="municipality-list-indiv">
-<h3>あ行</h3>
-<div class = "row">
-<% fish_kinds = @fish_kinds.where(id: 1..20) %>
-<% fish_kinds.each do |fish_kind| %>
-<div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
-</div>
-<% end %>
-</div>
-</div>
-
-<div class="municipality-list-indiv">
-<h3>か行</h3>
-<div class = "row">
-<% fish_kinds = @fish_kinds.where(id: 21..41) %>
-<% fish_kinds.each do |fish_kind| %>
-<div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
-</div>
-<% end %>
-</div>
-</div>
-
-<div class="municipality-list-indiv">
-<h3>さ行</h3>
-<div class = "row">
-<% fish_kinds = @fish_kinds.where(id: 42..52) %>
-<% fish_kinds.each do |fish_kind| %>
-<div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
-</div>
-<% end %>
-</div>
-</div>
-
-<div class="municipality-list-indiv">
-<h3>た行</h3>
-<div class = "row">
-<% fish_kinds = @fish_kinds.where(id: 53..65) %>
-<% fish_kinds.each do |fish_kind| %>
-<div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
-</div>
-<% end %>
-</div>
-</div>
-
-<div class="municipality-list-indiv">
-<h3>な行</h3>
-<div class = "row">
-<% fish_kinds = @fish_kinds.where(id: 66..68) %>
-<% fish_kinds.each do |fish_kind| %>
-<div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
-</div>
-<% end %>
-</div>
-</div>
-
-<div class="municipality-list-indiv">
-<h3>は行</h3>
-<div class = "row">
-<% fish_kinds = @fish_kinds.where(id: 67..86) %>
-<% fish_kinds.each do |fish_kind| %>
-<div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
-</div>
-<% end %>
-</div>
-</div>
-
-<div class="municipality-list-indiv">
-<h3>ま行</h3>
-<div class = "row">
-<% fish_kinds = @fish_kinds.where(id: 87..91) %>
-<% fish_kinds.each do |fish_kind| %>
-<div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
-</div>
-<% end %>
-</div>
-</div>
-
-<div class="municipality-list-indiv">
-<h3>や行</h3>
-<div class = "row">
-<% fish_kinds = @fish_kinds.where(id: 92..94) %>
-<% fish_kinds.each do |fish_kind| %>
-<div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
-</div>
-<% end %>
-</div>
-</div>
-
-<div class="municipality-list-indiv">
-<h3>ら行</h3>
-<div class = "row">
-<% fish_kinds = @fish_kinds.where(id: 95..97) %>
-<% fish_kinds.each do |fish_kind| %>
-<div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id), class: "municipality-list-indiv-text" %>
-</div>
-<% end %>
-</div>
-</div>
-
-  <div class="municipality-list-indiv">
-  <h3>その他</h3>
-  <div class="row">
-<% fish_kind = @fish_kinds.find_by(id: 98) %>
-<div class="col-12 col-md-2 municipality-list-indiv-box">
-<%= link_to fish_kind.name, posts_path(fish_kind_id: fish_kind.id),class:"municipality-list-indiv-text" %>
-</div>
-</div>
-</div>
-
-</div>
-</div>
 </div>
 
 <%= render 'shared/footer' %>

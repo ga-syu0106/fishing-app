@@ -1,151 +1,172 @@
 <%= render 'shared/header' %>
 <div class="post-show-main">
   <div class="post-show-inner">
-      <div class="post-show-wrapper">
-        <% if user_signed_in? && current_user.id == @post.user.id %>
-      <div class ="post-show-edit">
+    <% if user_signed_in? && current_user.id == @post.user.id %>
+    <div class="post-show-edit">
 
       <%= link_to "編集", edit_post_path(@post), class:"post-show-edit-btn" %>
-      
+
       <%= link_to "削除", post_path(@post), method: :delete, class:"post-show-destroy-btn" %>
 
+    </div>
+    <% end %>
+    <div class="post-show-wrapper">
+      <div class="post-show-heading">
+        <%= "#{@post.user.nickname}さんの"%>
+        <br>
+        <%= "#{@post.fishing_date.strftime("%Y年%m月%d日")}の釣果" %>
       </div>
-      <% end %>
-      <h2 class="post-show-page-heading">
-        <%= "#{@post.user.nickname}さんの#{@post.fishing_date.strftime("%Y年%m月%d日")}の釣果"%>
-      </h2>
 
       <div class="post-show-flex">
-      <div class="post-show-left">
-      <div class="post-show-left-box">
-      <% if @post.fish_image.attached? %>
-        <%= image_tag @post.fish_image, class:"post-show-left-image" %>
-      <% else %>
-        <%= image_tag "fishing_fish.png", class:"post-show-left-image" %>
-      <% end %>
-      <div class="mapmap">
-      <%= render '/shared/map_show', locals:{post: @post} %>
-      </div>
-      </div>
-      </div>
-
-      <div class="post-show-right">
-      <div class="post-show-table-fish">
-      <table class="table">
-            <h4 class="table-text">釣果情報</h4>
-        <tbody>
-
-          <tr>
-            <th class="table-col1">釣った人</th>
-            <td class="table-col2 post-show-link-table"><%= link_to @post.user.nickname, user_path(@post.user) %></td>
-          </tr>
-
-          <tr>
-            <th class="table-col1">魚種</th>
-            <td class="table-col2 post-show-link-table"><%= link_to @post.fish_kind.name, posts_path(fish_kind_id: @post.fish_kind_id)  %></td>
-          </tr>
-
-          <tr>
-            <th class="table-col1">魚名</th>
-            <td class="table-col2"><%= @post.fish_name %></td>
-          </tr>
-
-          <tr>
-            <th class="table-col1">釣った地域</th>
-            <td class="table-col2 post-show-link-table"><%= link_to @post.municipality.name, posts_path(municipality_id: @post.municipality_id) %></td>
-          </tr>
-
-          <tr>
-            <th class="table-col1">釣った場所</th>
-            <td class="table-col2"><%= @post.spot %></td>
-          </tr>
-
-          <tr>
-            <th class="table-col1">日付</th>
-            <td class="table-col2"><%= @post.fishing_date.strftime("%Y年%m月%d日") %></td>
-          </tr>
-
-          <tr>
-            <th class="table-col1">時間</th>
-            <td class="table-col2"><%= @post.fishing_time.strftime("%H時%M分") %></td>
-          </tr>
-
-          <tr>
-            <th class="table-col1">天候</th>
-            <td class="table-col2"><%= @post.weather.name %></td>
-          </tr>
-
-        </tbody>
-      </table>
-      </div>
-
-      <div class="post-show-table-fish">
-      <table class="table">
-      <h4 class= table-text>道具情報</h4>
-        <tbody>
-
-           <tr>
-            <th class="table-col1">仕掛け</th>
-            <td class="table-col2"><%= @post.gimmick %></td>
-          </tr>
-
-           <tr>
-            <th class="table-col1">ロッド</th>
-            <td class="table-col2"><%= @post.rod %></td>
-          </tr>
-
-           <tr>
-            <th class="table-col1">リール</th>
-            <td class="table-col2"><%= @post.reel %></td>
-          </tr>
-
-           <tr>
-            <th class="table-col1">ライン</th>
-            <td class="table-col2"><%= @post.line %></td>
-          </tr>
-
-          </tbody>
-          </table>
+        <div class="post-show-left">
+          <div class="post-show-left-box">
+            <% if @post.fish_image.attached? %>
+            <%= image_tag @post.fish_image, class:"post-show-left-image" %>
+            <% else %>
+            <%= image_tag "fishing_fish.png", class:"post-show-left-image" %>
+            <% end %>
           </div>
-      </div>
-    </div>
-    <div class="post-show-page-wrapper">
-      <h5 class="post-show-page-heading">
-        詳細
-      </h5>
-      <div class="post-show-page-profile">
-        <%= simple_format(@post.explanation)%>
+        </div>
+
+        <div class="post-show-right">
+          <div class="post-show-table-fish">
+            <table class="table">
+              <h4 class="table-text">釣果情報</h4>
+              <tbody>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">釣った人</th>
+                  <td class="table-col2 post-show-link-table" style="border:none; padding:5px;">
+                    <%= link_to @post.user.nickname, user_path(@post.user) %>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">魚種</th>
+                  <td class="table-col2 post-show-link-table" style="border:none; padding:5px;">
+                    <%= link_to @post.fish_kind.name, posts_path(fish_kind_id: @post.fish_kind_id)  %></td>
+                </tr>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">魚名</th>
+                  <td class="table-col2" style="border:none; padding:5px;"><%= @post.fish_name %></td>
+                </tr>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">地域</th>
+                  <td class="table-col2 post-show-link-table" style="border:none; padding:5px;">
+                    <%= link_to @post.municipality.name, posts_path(municipality_id: @post.municipality_id) %></td>
+                </tr>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">場所</th>
+                  <td class="table-col2" style="border:none; padding:5px;"><%= @post.spot %></td>
+                </tr>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">日付</th>
+                  <td class="table-col2" style="border:none; padding:5px;">
+                    <%= @post.fishing_date.strftime("%Y年%m月%d日") %></td>
+                </tr>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">時間</th>
+                  <td class="table-col2" style="border:none; padding:5px;"><%= @post.fishing_time.strftime("%H時%M分") %>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">天候</th>
+                  <td class="table-col2" style="border:none; padding:5px;"><%= @post.weather.name %></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    
-    <div class="post-show-comment-form">
-        <h3>コメント一覧</h3>
+
+      <div class="post-show-flex-2">
+        <div class="post-show-left">
+          <div class="post-show-left-box">
+            <div class="mapmap">
+              <%= render '/shared/map_show', locals:{post: @post} %>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-show-right">
+          <div class="post-show-table-fish">
+            <table class="table">
+              <h4 class=table-text>道具情報</h4>
+              <tbody>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">仕掛け</th>
+                  <td class="table-col2" style="border:none; padding:5px;"><%= @post.gimmick %></td>
+                </tr>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">ロッド</th>
+                  <td class="table-col2" style="border:none; padding:5px;"><%= @post.rod %></td>
+                </tr>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">リール</th>
+                  <td class="table-col2" style="border:none; padding:5px;"><%= @post.reel %></td>
+                </tr>
+
+                <tr>
+                  <th class="table-col1" style="border:none; padding:5px;">ライン</th>
+                  <td class="table-col2" style="border:none; padding:5px;"><%= @post.line %></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-show-page-wrapper">
+        <h5 class="post-show-page-heading">
+          詳細
+        </h5>
+        <div class="post-show-page-profile">
+          <%= simple_format(@post.explanation)%>
+        </div>
+      </div>
+
+      <div class="post-show-comment-form">
+        <div class="post-show-page-heading">コメント一覧</div>
         <%= will_paginate(@comments, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
-      <div class="post-show-comment-box">
-        <% @comments.each do |comment| %>
-        <div class="post-show-comment-double">
-        <div class="post-show-comment-name" >
-        <%= link_to comment.user.nickname, user_path(comment.user), class:"comment-name" %><span>:</span>
+        <div class="post-show-comment-box">
+          <% @comments.each do |comment| %>
+          <div class="post-show-comment-time"><%= l comment.created_at %></div>
+          <div class="post-show-comment-double">
+            <div class="post-show-comment-name">
+              <%= link_to comment.user.nickname, user_path(comment.user), class:"comment-name" %><span>:</span>
+            </div>
+            <div class="post-show-comment-text">
+              <%= simple_format(comment.text) %>
+            </div>
+          </div>
+          <% end %>
         </div>
-        <div class="post-show-comment-text">
-        <%= comment.text %>
-        </div>
+        <% if user_signed_in? %>
+        <%= form_with(model: [@post, @comment], local: true) do |f| %>
+        <div class="post-show-comment-area">
+          <%= f.text_area :text, placeholder: "コメントする", rows: "2", class:"comment-area" %>
+          <div class="post-show-comment-btn">
+            <%= f.submit "コメントする", class:"comment-btn" %>
+          </div>
         </div>
         <% end %>
-        </div>
-    <% if user_signed_in? %>
-      <%= form_with(model: [@post, @comment], local: true) do |f| %>
-      <div class="post-show-comment-area">
-        <%= f.text_area :text, placeholder: "コメントする", rows: "2", class:"comment-area" %>
-        <div class="post-show-comment-btn">
-        <%= f.submit "コメントする", class:"comment-btn" %>
-        </div>
-        </div>
-      <% end %>
-    <% else %>
-      <strong><p>※コメントの投稿には新規登録/ログインが必要です</p></strong>
-    <% end %>
-    </div>
+        <% else %>
+        <strong>
+          <p>※コメントの投稿には新規登録/ログインが必要です</p>
+        </strong>
+        <% end %>
+      </div>
 
     </div>
   </div>

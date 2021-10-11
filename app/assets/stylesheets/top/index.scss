@@ -24,7 +24,7 @@
   padding-top: 400px;
   color: #ffffff;
   text-shadow: 0 5px 5px black;
-  font-family: "Caveat", cursive;
+  font-family: serif;
   user-select: none;
 }
 
@@ -131,7 +131,7 @@ justify-content: center;
 .middle-btn-left{
   margin-right:200px;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
   .top-thumbnail {
     height: 500px;
   }
@@ -143,7 +143,9 @@ justify-content: center;
     font-weight: 300;
     letter-spacing: 5px;
   }
-  
+  .top-title span{
+    display:block;
+  }
   .top-title h2 {
     padding: 50px;
     font-size: 30px;

@@ -31,7 +31,7 @@ class FishKind < ActiveHash::Base
     { id: 85, name: 'ホッケ' }, { id: 86, name: 'ボラ' }, { id: 87, name: 'マカジカ' },
     { id: 88, name: 'マグロ' }, { id: 89, name: 'ムツ' }, { id: 90, name: 'メジナ' },
     { id: 91, name: 'メバル' }, { id: 92, name: 'ヤガラ' }, { id: 93, name: 'ユゴイ' },
-    { id: 94, name: 'ヨウジウオ(タツノオトシゴ)' }, { id: 95, name: 'ライギョ' }, { id: 96, name: 'リュウグウノツカイ' },
+    { id: 94, name: 'ヨウジウオ' }, { id: 95, name: 'ライギョ' }, { id: 96, name: 'リュウグウノツカイ' },
     { id: 97, name: 'ワカサギ' }, { id: 98, name: 'その他' }
   ]
 
