@@ -46,6 +46,7 @@ class PostsController < ApplicationController
   def edit
     @post_one = @post
     gon.post = @post
+    
   end
 
   def update

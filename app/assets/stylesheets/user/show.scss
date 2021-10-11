@@ -56,17 +56,17 @@
   justify-content:center;
 }
 .user-left{
-  width:100%;
+  width:55%;
   margin: 0 auto;
 }
 .user-right{
-  width:100%;
+  width:45%;
   margin: 0 auto;
 }
 .user-left-box{
   margin: 0 auto;
   padding:20px;
-  width:250px;
+  width:280px;
   height:auto;
   position:relative;
   border-radius:20px;
@@ -92,11 +92,13 @@
   width:40%;
   min-width:150px;
   text-align:left;
-  font-size: 20px;
+  font-size: 18px;
 }
 .table-col2{
   text-align:left;
-  font-size: 20px;
+  font-size: 18px;
+  word-break:break-all;
+  word-wrap:break-word;
 }
 .page-wrapper{
   width:60%;
@@ -111,7 +113,7 @@
 }
 .page-profile{
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   margin:10px auto 0;
   padding: 10px 16px 8px;
   text-align: left;;
@@ -128,7 +130,6 @@
   text-align: center;
 }
 .fish-list-text{
-  padding-top:20px;
   font-size: 30px;
   font-family: serif;
   text-shadow: 0 1px 1px gray;
@@ -138,8 +139,15 @@
     min-width:350px;
     text-align:center;
   }
+  .user-page-heading{
+    font-size: 36px;
+  }
   .user-flex{
     display:block;
+  }
+  .user-left{
+    width: 100%;
+    margin:0 auto;
   }
   .user-right{
     width:80%;
@@ -149,12 +157,14 @@
   }
   .table-col1{
     font-size: 16px;
-    text-align: right;;
-    width:50%
+    text-align: center;
+    width:50%;
   }
   .table-col2{
     font-size: 16px;
     width:50%;
   }
-
+.page-heading{
+  text-align: center;
+}
 }
