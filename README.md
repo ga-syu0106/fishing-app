@@ -94,44 +94,62 @@
 - トップ画面遷移後画面右上の『新規登録』ボタンを押して新規登録画面に遷移できます。
 - アカウント登録することができます。
 - 作成することはできますが、原則テストアカウントでのログインをお願いたします。
+  ![userr1](app/assets/images/Git/git2.png)
+  ![userr2](app/assets/images/Git/git2-2.png)
 
 ### ＜ユーザーログイン＞
 
 - トップ画面遷移後画面右上の『ログイン』ボタンを押してログイン画面に遷移できます。
 - ユーザー１又はユーザー２の情報を使用してログインできます。
 - ログインすることにより、さまざまな機能が使えるようになります。
+  ![users1](app/assets/images/Git/git3.png)
 
 ### ＜ユーザー詳細＞
 
 - トップ画面遷移後画面右上の『マイページ』ボタンを押すとマイページ画面に遷移できます。
 - 他人のマイページも見ることができます。
 - 自己紹介や自分の釣果のみがまとめられたページになります。
+  ![user-show1](app/assets/images/Git/git4.png)
+  ![user-show2](app/assets/images/Git/git4-2.png)
 
 ### ＜ユーザー編集＞
 
 - ユーザー詳細ページにある『編集』ボタンを押すとユーザー編集画面に遷移できます。
 - 主に自己紹介内容を編集することができます。
+  ![user-edit1](app/assets/images/Git/git5.png)
+  ![user-edit2](app/assets/images/Git/git5-2.png)
 
 ### ＜釣果投稿＞
 
 - 右上にある『釣果投稿』ボタンを押すと釣果投稿ページに遷移できます。
 - 釣果投稿では必須項目を入力していただき『投稿する』ボタンを押すと釣果が投稿できるようになっています。
+  ![post-new1](app/assets/images/Git/git6.png)
+  ![post-new2](app/assets/images/Git/git6-2.png)
+  ![post-new3](app/assets/images/Git/git6-3.png)
 
 ### ＜釣果一覧＞
 
 - 右上にある『最新の釣果』ボタンを押すと詳細ページに遷移すできます。
 - 投稿の画像をクリックするとクリックした釣果の詳細ページへ遷移できます。
 - 同じく名前をクリックすると釣果の投稿者の詳細ページへ<br>魚種をクリックするとその魚種が含まれた投稿一覧ページへ<br>市町村をクリックするとその市町村が含まれた投稿一覧ページへ遷移するようになっています。（この機能は詳細ページにもついています）
+  ![post-show1](app/assets/images/Git/git7.png)
+  ![post-show2](app/assets/images/Git/git7-2.png)
 
 ### <釣果詳細>
 
 - 釣果が詳しく見れるページになっています。
 - ユーザー同士でコメントし合うことが可能です。
+  ![post-show1](app/assets/images/Git/git8.png)
+  ![post-show2](app/assets/images/Git/git8-2.png)
+  ![post-show3](app/assets/images/Git/git8-3.png)
 
 ### <釣果編集>
 
 - 釣果詳細画面にある『編集』ボタンを押すと釣果編集画面に遷移できます。
 - 自分が投稿した超過の編集をすることができます。
+  ![post-edit1](app/assets/images/Git/git9.png)
+  ![post-edit2](app/assets/images/Git/git9-2.png)
+  ![post-edit3](app/assets/images/Git/git9-3.png)
 
 ### <釣果削除>
 
