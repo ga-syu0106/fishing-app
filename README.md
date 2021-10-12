@@ -116,7 +116,7 @@
 
 ## <洗い出した要件>
 
----
+## ![teigi](app/assets/images/Git/teigi.png)
 
 # DB 設計
 
