@@ -85,8 +85,9 @@
 
 - 左上、又は一番下にあるロゴ画像を押すと遷移できます。
 - アプリ全体の概要について説明しているページになります。
-  ![a](app/assets/images/top.png)
-  ![a](app/assets/images/top.png)
+  ![top1](app/assets/images/Git/git1.png)
+  ![top2](app/assets/images/Git/git1-2.png)
+  ![top3](app/assets/images/Git/git1-3.png)
 
 ### ＜ユーザー登録＞
 
