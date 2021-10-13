@@ -1,4 +1,5 @@
 user1 = User.create!(
+  id:1,
   email: 'user1@email',
   password: 'user123',
   password_confirmation: 'user123',
@@ -14,6 +15,7 @@ user1.user_image.attach(io: File.open(Rails.root.join('app/assets/images/seed/us
                   filename: 'user1.png')
 
 user2 = User.create!(
+  id:2,
   email: 'user2@email',
   password: 'user123',
   password_confirmation: 'user123',
@@ -25,7 +27,7 @@ user2 = User.create!(
   style_id: 1,
   profile:"バス釣りをよくします。\r\nおすすめのスポットがあれば教えてください！"
 )
-user2.user_image.attach(io: File.open(Rails.root.join('app/assets/images/seed/user2.png')),
+user2.user_image.attach(io: File.open(Rails.root.join('app/assets/images/user2.png')),
                   filename: 'user2.png')
 
 p1 = Post.create!(
