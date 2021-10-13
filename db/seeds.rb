@@ -27,7 +27,7 @@ user2 = User.create!(
   style_id: 1,
   profile:"バス釣りをよくします。\r\nおすすめのスポットがあれば教えてください！"
 )
-user2.user_image.attach(io: File.open(Rails.root.join('app/assets/images/user2.png')),
+user2.user_image.attach(io: File.open(Rails.root.join('app/assets/images/seed/user2.png')),
                   filename: 'user2.png')
 
 p1 = Post.create!(
