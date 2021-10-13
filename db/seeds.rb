@@ -10,7 +10,7 @@ user1 = User.create!(
   style_id: 2,
   profile:"夏場メインで釣りをしています。\r\nよろしくお願いします。",
 )
-user1.user_image.attach(io: File.open(Rails.root.join('app/assets/images/top.png')),
+user1.user_image.attach(io: File.open(Rails.root.join('app/assets/images/seed/user1.png')),
                   filename: 'user1.png')
 
 user2 = User.create!(
@@ -25,7 +25,7 @@ user2 = User.create!(
   style_id: 1,
   profile:"バス釣りをよくします。\r\nおすすめのスポットがあれば教えてください！"
 )
-user2.user_image.attach(io: File.open(Rails.root.join('app/assets/images/map.png')),
+user2.user_image.attach(io: File.open(Rails.root.join('app/assets/images/seed/user2.png')),
                   filename: 'user2.png')
 
 p1 = Post.create!(
