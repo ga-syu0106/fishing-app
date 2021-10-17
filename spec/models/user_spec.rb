@@ -83,14 +83,14 @@ RSpec.describe User, type: :model do
         @user.password = 'useruser'
         @user.password_confirmation = 'useruser'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード半角英数字のみで両方使用してください")
+        expect(@user.errors.full_messages).to include("パスワードは半角英数字のみで両方使用してください")
       end
 
       it 'パスワードは、半角英数字混合での入力でないと登録できないこと(半角数字のみ)' do
         @user.password = '111111'
         @user.password_confirmation = '111111'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード半角英数字のみで両方使用してください")
+        expect(@user.errors.full_messages).to include("パスワードは半角英数字のみで両方使用してください")
       end
 
       it 'パスワードは、確認用を含めて2回入力しないと登録できないこと' do
