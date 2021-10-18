@@ -10,5 +10,9 @@ FactoryBot.define do
     history               {age - rand(1..10)}
     style_id              {rand(1..3)}
     profile               {'おはようございます'}
+
+    after(:build) do |user|
+      user.user_image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image_png')
+    end
   end
 end

@@ -31,9 +31,14 @@ RSpec.describe User, type: :model do
         @user.style_id = ''
         expect(@user).to be_valid
       end
-      
+
       it '自己紹介が空でも登録できること' do
         @user.profile = ''
+        expect(@user).to be_valid
+      end
+
+      it '画像が空でも登録できること' do
+        @user.user_image = ''
         expect(@user).to be_valid
       end
     end
